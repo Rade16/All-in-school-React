@@ -15,9 +15,7 @@
   margin: 0 auto;
 }
 
-.logo {
 
-}
 
 .btn {
   font-size: 18px;
@@ -39,8 +37,13 @@
   line-height: 1;
   color: #fbfbfb;
 }
+
+.nav__list{
+  margin-left: auto;
+  display: flex;
+  gap: 30px;
+}
 .nav-link {
-  margin-right: 32px;
   color: #ffffff;
   text-decoration: none;
 }

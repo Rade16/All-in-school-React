@@ -1,34 +1,47 @@
 .header__nav {
+  padding-top: 40px ;
   display: flex;
-  background-color: #212121;
-  align-items: center;
-  height: 100px; /* высота*/
-  border-bottom: 3px solid #e5e9f2;
+  z-index: 3;
+  height: 100px;
+  width: 100%;
+  position: fixed;
 }
 
 .header__container__nav {
-  width: 1140px; /* ширина*/
 
+  width: 1140px; /* ширина*/
   display: flex;
+  align-items: center;
   margin: 0 auto;
 }
 
 
-
-
-.nav{
+.btn {
+  font-size: 18px;
   margin-left: auto;
+
+  padding: 13px 20px;
+  border-radius: 10px;
+  border: 2px #cc9933 solid;
+  color: #ffffff;
+}
+
+
+.nav {
+  display: flex;
+ width: 100%;
   font-size: 20px;
   line-height: 1;
   color: #fbfbfb;
 }
-.nav__list
-{
+
+.nav__list{
+  margin-left: auto;
   display: flex;
-  gap: 20px;
+  gap: 30px;
 }
+
 .nav-link {
-  margin-right: 32px;
   color: #ffffff;
   text-decoration: none;
 }
@@ -54,3 +67,5 @@
 .nav-link:focus:after {
   width: 100%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
 }
+
+

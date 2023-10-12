@@ -1,15 +1,16 @@
-import "./_nav.scss";
-import logo from "./../../img/logo.svg";
+import './_nav2.scss'
+import logo from './../../img/logo.svg';
 
-const Nav = () => {
+const Nav2 = () => {
   return (
-    <header className="header__nav">
-      <div className="header__container__nav">
-        <div className="logo">
-          <img src={logo} alt="logo" />
-        </div>
-        <nav className="nav">
-          <ul className="nav__list">
+    <header className='header__nav'>
+      <div className='header__container__nav'>
+
+        <nav className='nav'>
+            <div className="nav__menu">
+                <p className='nav-link'>Меню</p>
+            </div>
+        <ul className="nav__list">
             <li>
               <a className="nav-link" href="#">
                 Главная
@@ -32,12 +33,9 @@ const Nav = () => {
             </li>
           </ul>
         </nav>
-        <div className="btn">
-          <strong>Войти</strong>
-        </div>
       </div>
     </header>
   );
 };
 
-export default Nav;
+export default Nav2;
