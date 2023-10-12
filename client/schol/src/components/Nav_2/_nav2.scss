@@ -1,0 +1,56 @@
+.header__nav {
+  display: flex;
+  background-color: #212121;
+  align-items: center;
+  height: 100px; /* высота*/
+  border-bottom: 3px solid #e5e9f2;
+}
+
+.header__container__nav {
+  width: 1140px; /* ширина*/
+
+  display: flex;
+  margin: 0 auto;
+}
+
+
+
+
+.nav{
+  margin-left: auto;
+  font-size: 20px;
+  line-height: 1;
+  color: #fbfbfb;
+}
+.nav__list
+{
+  display: flex;
+  gap: 20px;
+}
+.nav-link {
+  margin-right: 32px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.nav-link {
+  position: relative;
+  cursor: pointer;
+  line-height: 1; /*задаём высоту строки*/
+  text-decoration: none; /*убираем подчёркивание*/
+}
+.nav-link:after {
+  display: block;
+  position: absolute;
+  left: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
+  width: 0; /*задаём длинну линии до наведения курсора*/
+  height: 2px; /*задаём ширину линии*/
+  background-color: #ffc700; /*задаём цвет линии*/
+  content: '';
+  transition: width 0.3s ease-out; /*задаём время анимации*/
+}
+
+.nav-link:hover:after,
+.nav-link:focus:after {
+  width: 100%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+}
