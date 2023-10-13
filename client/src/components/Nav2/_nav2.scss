@@ -8,7 +8,7 @@
 }
 
 .header__container__nav {
-  width: 1140px; /* ширина*/
+  width: 1240px; /* ширина*/
   display: flex;
   align-items: center;
   margin: 0 auto;
@@ -111,35 +111,36 @@
 }
 
 .menu {
-  display: block;
+  text-align: center;
+  display: none;
   position: absolute;
-  width: 500px;
-  height: 100vw;
-  margin: -130px 0 0 -410px;
+  width: 300px;
+  height: 500px;
+  top: -60px;
+  left: -120px;
   padding: 50px;
-  padding-top: 200px;
-
-  background: #000000;
+  padding-top: 100px;
+  border-radius: 0  0 40px 40px;
+  background: #b9b9b91a;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
   /* to stop flickering of text in safari */
 
-  transform-origin: 0% 0%;
-  transform: translate(-100%, 0);
-
-  transition: transform 0.2s cubic-bezier(0.77, 0.2, 0.05, 1);
 }
 
 .menu li {
-  margin-left: 100px;
-  font-weight: 600;
-  padding: 20px 0;
-  font-size: 22px;
+
+  font-weight: 500;
+  margin-top: 25px;
+  font-size: 20px;
   color: #ffffff;
 }
 
 .menu li:nth-child(6) {
   margin-top: 50px;
+}
+.menu li:last-child:hover > a {
+  color: rgb(255, 116, 116);
 }
 
 /*
@@ -147,5 +148,7 @@
  */
 .nav__checkbox:checked ~ .menu {
   display: block;
+  opacity: 1;
   transform: none;
 }
+
