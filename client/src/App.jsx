@@ -9,16 +9,18 @@ import Reg from './pages/Reg/Reg.jsx';
 import Nav2 from './components/Nav2/Nav2';
 import Profile from './pages/Profile/Profile';
 import Courses from './pages/Courses/Courses';
+import  Auth from './pages/Auth/Auth'
 function App() {
   return (
     <>
       <Nav2 />
       {/* <Nav /> */}
-      {/*<Reg/>*/}
+
+      <Auth/>
       {/* <Header />
       <Home />
       <Profile /> */}
-      <Courses />
+      {/* <Courses /> */}
       <Footer />
     </>
   );
