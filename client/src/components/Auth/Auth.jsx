@@ -14,7 +14,7 @@ function Auth(props) {
                 </div>
                 <div className="auth__input-area">
                   <div className="auth__form-inp">
-                    <input placeholder="Email Address" type="text" />
+                    <input placeholder="Логин" type="text" />
                   </div>
                   <div className="auth__form-inp">
                     <input placeholder="Пароль" type="password" />

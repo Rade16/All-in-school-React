@@ -18,10 +18,10 @@ function Reg(props) {
                     <input placeholder="Имя" type="text" />
                   </div>
                   <div className="reg__form-inp">
-                    <input placeholder="Отчество" type="password" />
+                    <input placeholder="Отчество" type="text" />
                   </div>
                   <div className="reg__form-inp">
-                    <input placeholder="e-mail" type="password" />
+                    <input placeholder="Логин" type="text" />
                   </div>
                   <div className="reg__form-inp">
                     <input placeholder="Пароль" type="password" />
