@@ -1,37 +1,33 @@
-.profile{
+.profile {
   padding: 1px;
   height: 1000px;
-  background: #131313;;
+  background: #131313;
 }
 
-.profile__container
-{
+.profile__container {
   width: 1240px;
   margin: 0 auto;
   margin-top: 165px;
- display: flex;
- gap: 105px;
- align-items: center;
- justify-content: center;
+  display: flex;
+  gap: 105px;
+  align-items: center;
+  justify-content: center;
 }
 
-
-.Profile__title
-{
+.Profile__title {
   font-size: 26px;
   font-weight: 600;
   margin-bottom: 30px;
 }
-.profile__form-input-text{
+.profile__form-input-text {
   font-size: 20px;
   font-weight: 600;
-  color: #FFC700;
+  color: #ffc700;
   margin-bottom: 10px;
-
 }
 
-.profile__form-input-field{
-  background-color: #D9D9D9;
+.profile__form-input-field {
+  background-color: #d9d9d9;
   border-radius: 10px;
   height: 55px;
   width: 405px;
@@ -41,39 +37,43 @@
   font-size: 20px;
 }
 
-
-.profile__upload-photo{
-  background-color: #D9D9D9;
+.profile__upload-photo {
+  background-color: #d9d9d9;
   width: 320px;
   height: 360px;
   margin-bottom: 40px;
 }
 
-.profile__form-button{
+.profile__form-button {
   margin-top: 60px;
   width: 365px;
   height: 55px;
-  background: #FFC700;
+  background: #ffc700;
   border-radius: 10px;
   color: #000000;
   font-size: 20px;
   font-weight: 600;
 }
 
-.profile__buttons-line{
+.profile__buttons-line {
   display: flex;
   gap: 20px;
 }
 
-.profile__button{
+.profile__button {
+  user-select: none;
   display: flex;
-  background: #D9D9D9;
+  background: #d9d9d9;
   border-radius: 15px;
   width: 150px;
-  height: 55px; 
+  height: 55px;
   align-items: center;
- justify-content: center;
+  justify-content: center;
   color: #000;
   font-size: 20px;
   font-weight: 600;
+}
+
+.profile__button--active {
+  background: #ffc700;
 }

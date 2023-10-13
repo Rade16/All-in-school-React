@@ -1,5 +1,5 @@
 .header__nav {
-  padding-top: 40px ;
+  padding-top: 40px;
   display: flex;
   z-index: 3;
   height: 100px;
@@ -8,13 +8,11 @@
 }
 
 .header__container__nav {
-
   width: 1140px; /* ширина*/
   display: flex;
   align-items: center;
   margin: 0 auto;
 }
-
 
 .btn {
   font-size: 18px;
@@ -26,17 +24,16 @@
   color: #ffffff;
 }
 
-
 .nav {
   align-items: center;
   display: flex;
- width: 100%;
+  width: 100%;
   font-size: 20px;
   line-height: 1;
   color: #fbfbfb;
 }
 
-.nav__list{
+.nav__list {
   margin-left: auto;
   display: flex;
   gap: 30px;
@@ -69,96 +66,86 @@
   width: 100%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
 }
 
-.nav-link_menu
-{
+.nav-link_menu {
   z-index: 3;
 }
 
 /*Бургер*/
 
-.nav__menu
-{
+.nav__menu {
   display: block;
   position: relative;
 
   left: 50px;
-  
+
   z-index: 1;
   -webkit-user-select: none;
   user-select: none;
 }
 
-.nav__menu a
-{
+.nav__menu a {
   text-decoration: none;
   color: #ffffff;
 
   transition: color 0.3s ease;
 }
 
-.nav__menu a:hover
-{
-  color: #FED500;
+.nav__menu a:hover {
+  color: #fed500;
 }
 
-
-.nav__menu .nav__checkbox
-{
-  
+.nav__menu .nav__checkbox {
   display: block;
   width: 100px;
   height: 30px;
   position: absolute;
   top: -7px;
   left: -5px;
-  
+
   cursor: pointer;
-  
+
   opacity: 0; /* hide this */
   z-index: 4; /* and place it over the hamburger */
-  
+
   -webkit-touch-callout: none;
 }
 
-.menu
-{
-display: none;
+.menu {
+  display: block;
   position: absolute;
   width: 500px;
   height: 100vw;
   margin: -130px 0 0 -410px;
   padding: 50px;
   padding-top: 200px;
-  
+
   background: #000000;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
   /* to stop flickering of text in safari */
-  
+
   transform-origin: 0% 0%;
   transform: translate(-100%, 0);
-  
-  transition: transform 0.2s cubic-bezier(0.77,0.2,0.05,1.0);
+
+  transition: transform 0.2s cubic-bezier(0.77, 0.2, 0.05, 1);
 }
 
-.menu li
-{
+.menu li {
+  margin-left: 100px;
   font-weight: 600;
   padding: 20px 0;
   font-size: 22px;
   color: #ffffff;
 }
 
-.menu li:nth-child(6)
-{
+.menu li:nth-child(6) {
   margin-top: 50px;
 }
 
 /*
  * And let's slide it in from the left
  */
-.nav__checkbox:checked ~ .menu
-{
+.nav__checkbox:checked ~ .menu {
   display: block;
   transform: none;
 }
