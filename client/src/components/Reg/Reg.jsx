@@ -29,12 +29,10 @@ function Reg(props) {
                 </div>
                 <div className="reg__submit-button-cvr">
                   <button className="reg__submit-button" type="submit">
-                    Login
+                    Зарегистрироваться
                   </button>
                 </div>
-                <div className="reg__forgot-pass">
-                  <a href="#">Forgot password?</a>
-                </div>
+
               </div>
             </form>
           </div>
