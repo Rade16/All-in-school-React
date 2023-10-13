@@ -69,3 +69,10 @@
 .nav-link:focus:after {
   width: 100%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
 }
+
+.nav__buttons
+{
+  margin-left: 30px;
+  display: flex;
+  gap: 30px;
+}

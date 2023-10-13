@@ -1,17 +1,11 @@
-.reg{
-  height: 850px;
-  padding: 1px;
-  background: #131313;
-}
+
 .reg__container
 {
-
   width: 400px;
   margin: 0 auto;
-  margin-top: 150px;
 }
 
-.form {
+.reg__form {
   display: grid;
   place-items: center;
   width: 400px;
@@ -23,38 +17,38 @@
   border-radius: 10px;
 }
 
-.form-ui{
+.reg__form-ui{
   margin-top: 50px;
   width: 400px;
   height: 600px;
 }
-.form-body {
+.reg__form-body {
   position: absolute;
   width: 300px;
 }
 
-.welcome-lines {
+.reg__welcome-lines {
   text-align: center;
   line-height: 1;
 }
 
-.welcome-line-1 {
+.reg__welcome-line-1 {
   color: .00FF7F;
   font-weight: 600;
   font-size: 40px;
 }
 
-.welcome-line-2 {
+.reg__welcome-line-2 {
   color: #ffffff;
   font-size: 18px;
   margin-top: 17px;
 }
 
-.input-area {
+.reg__input-area {
   margin-top: 40px;
 }
 
-.form-inp {
+.reg__form-inp {
   padding: 11px 25px;
   background: transparent;
   border: 1px solid #e3e3e3;
@@ -63,13 +57,13 @@
   margin-bottom: 20px;
 }
 
-.form-inp:focus {
+.reg__form-inp:focus {
   border: 1px solid #cc9933;
 }
 
 
 
-.form-inp input {
+.reg__form-inp input {
   width: 100%;
   background: none;
   font-size: 20clearpx;
@@ -79,15 +73,15 @@
   margin: 0;
 }
 
-.form-inp input:focus {
+.reg__form-inp input:focus {
   outline: none;
 }
 
-.submit-button-cvr {
+.reg__submit-button-cvr {
   margin-top: 20px;
 }
 
-.submit-button {
+.reg__submit-button {
   display: block;
   width: 100%;
   color: .00FF7F;
@@ -104,19 +98,19 @@
   transition: all ease-in-out .3s;
 }
 
-.submit-button:hover {
+.reg__submit-button:hover {
   transition: all ease-in-out .3s;
   background-color: .00FF7F;
   color: #161616;
   cursor: pointer;
 }
 
-.forgot-pass {
+.reg__forgot-pass {
   text-align: center;
   margin-top: 10px;
 }
 
-.forgot-pass a {
+.reg__forgot-pass a {
   color: #868686;
   font-size: 12px;
   text-decoration: none;
