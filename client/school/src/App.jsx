@@ -16,8 +16,8 @@ function App() {
       {/* <Nav /> */}
       {/*<Reg/>*/}
       {/* <Header />
-      <Home /> */}
-      {/* <Profile/> */}
+      <Home />
+      <Profile /> */}
       <Courses />
       <Footer />
     </>

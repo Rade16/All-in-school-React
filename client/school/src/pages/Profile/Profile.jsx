@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import './_profile.scss';
 
 function Profile(props) {
