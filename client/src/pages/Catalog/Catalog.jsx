@@ -1,5 +1,5 @@
 import React from "react";
-import "./_ourCourses.scss";
+import "./_catalog.scss";
 import { objectOurCourses } from "../../Helpers/objectOurCurses";
 import OurCoursesCard from '../../components/OurCoursesCard/OurCoursesCard'
 const OurCourses = () => {  

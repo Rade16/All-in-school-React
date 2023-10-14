@@ -9,13 +9,13 @@ import Footer from './components/Footer/Footer';
 // import Profile from './pages/Profile/Profile';
 // import Courses from './pages/Courses/Courses';
 import Nav from './components/Nav/Nav';
-import OurCourses from './pages/OurCourses/OurCourses';
+import Catalog from './pages/Catalog/Catalog';
 function App() {
   return (
     <>
       {/* <Nav2 /> */}
       <Nav />
-      <OurCourses/>
+      <Catalog/>
       {/* <Auth/> */}
       {/* <Header /> */}
       {/* <Home /> */}
