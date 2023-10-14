@@ -18,7 +18,7 @@ class Profile(models.Model):
     last_name = models.CharField(max_length=150)
 
     telephone = models.BigIntegerField(null=True, blank=True)
-    gender = models.CharField(choices=genderChoices, default=genderMale)
+    gender = models.CharField(choices=genderChoices, null=True, blank=True)
     photo = models.ImageField(upload_to='users_photo', null=True, blank=True)
 
     class Meta:
