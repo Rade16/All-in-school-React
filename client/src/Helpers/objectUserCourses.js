@@ -1,5 +1,5 @@
 import img from './../img/Courses/Barber.png';
-const objectCourses = [
+const objectUserCourses = [
   {
     img: img,
     title: 'Барбер с нуля',
@@ -23,4 +23,4 @@ const objectCourses = [
   },
 ];
 
-export { objectCourses };
+export { objectUserCourses };

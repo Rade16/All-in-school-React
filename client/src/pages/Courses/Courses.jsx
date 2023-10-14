@@ -1,6 +1,6 @@
 import React from 'react';
-import { objectCourses } from '../../Helpers/objectCourses';
-import CoursesCard from '../../components/CoursesCard/CoursesCard';
+import { objectUserCourses } from '../../Helpers/objectUserCourses';
+import UserCoursesCard from '../../components/UserCoursesCard/UserCoursesCard';
 import './_courses.scss';
 function Courses() {
   return (
@@ -8,8 +8,8 @@ function Courses() {
       <div className='courses'>
         <div className='courses__container'>
           <div className='courses__line'>
-            {objectCourses.map((card, index) => {
-              return <CoursesCard key={index} object={card} />;
+            {objectUserCourses.map((card, index) => {
+              return <UserCoursesCard key={index} object={card} />;
             })}
           </div>
         </div>

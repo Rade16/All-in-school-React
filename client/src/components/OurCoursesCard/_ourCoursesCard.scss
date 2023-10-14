@@ -7,18 +7,7 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-.courseCard__filter {
-  z-index: 1;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    360deg,
-    rgba(0, 0, 0, 0.78) 3.93%,
-    rgba(63, 63, 63, 0.8) 45.61%,
-    rgba(233, 233, 233, 0) 125.11%
-  );
-}
+
 
 .courseCard__container {
   position: relative;
@@ -32,7 +21,18 @@
   font-weight: bold;
 }
 
-.courseCard__text {
+.courseCard__price
+{
   margin-top: 20px;
   font-size: 20px;
+  font-weight: 200;
+}
+
+.courseCard__button
+{
+  margin-top: 10px;
+}
+.courseCard__button-link{
+  cursor: pointer;
+  color: #F0BF5F;
 }

@@ -6,18 +6,19 @@ import Home from './pages/Home/Home';
 import Footer from './components/Footer/Footer';
 
 // import Nav2 from './components/Nav2/Nav2';
-import Profile from './pages/Profile/Profile';
-import Courses from './pages/Courses/Courses';
+// import Profile from './pages/Profile/Profile';
+// import Courses from './pages/Courses/Courses';
 import Nav from './components/Nav/Nav';
+import OurCourses from './pages/OurCourses/OurCourses';
 function App() {
   return (
     <>
       {/* <Nav2 /> */}
       <Nav />
-
+      <OurCourses/>
       {/* <Auth/> */}
-      <Header />
-      <Home />
+      {/* <Header /> */}
+      {/* <Home /> */}
       {/* <Profile /> */}
       {/* <Courses /> */}
       <Footer />
