@@ -10,24 +10,23 @@ const Settings = () => {
         <div className="settings__block">
           <h1 className="settings__name">Сменить тему:</h1>
           <div className="settings__button">
-            <div class="toggle-switch">
-              <label class="switch-label">
-                <input type="checkbox" class="checkbox" />
-                <span class="slider"></span>
+            <div className="toggle-switch">
+              <label className="switch-label">
+                <input type="checkbox" className="checkbox" />
+                <span className="slider"></span>
               </label>
             </div>
           </div>
         </div>
-
-        
         <div className="settings__block">
           <h1 className="settings__name">Сменить язык:</h1>
           <div className="settings__button">
-            <div class="toggle-switch">
-              <label class="switch-label">
-                <input type="checkbox" class="checkbox" />
-                <span class="slider"></span>
-              </label>
+            <div className="toggle-button-cover">
+              <div className="button r" id="button-3">
+                <input type="checkbox" className="checkbox_l" />
+                <div className="knobs"></div>
+                <div className="layer"></div>
+              </div>
             </div>
           </div>
         </div>
