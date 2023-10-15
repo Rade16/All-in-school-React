@@ -4,10 +4,10 @@ import './_ourCoursesCard.scss'
 function OurCoursesCard({ object }) {
   return (
     <>
-      <div className='courseCard' style={{ backgroundImage: `url(${object.img})` }}>
+      <div className='courseCard' style={{ backgroundImage: `url(${object.image})` }}>
        
         <div className='courseCard__container'>
-          <h1 className='courseCard__title'>{object.title}</h1>
+          <h1 className='courseCard__title'>{object.name}</h1>
           <p className='courseCard__price'>
             От {object.price} ₽
           </p>

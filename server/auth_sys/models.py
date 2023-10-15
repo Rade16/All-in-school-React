@@ -19,10 +19,10 @@ class Profile(models.Model):
 
     telephone = models.BigIntegerField(null=True, blank=True)
     gender = models.CharField(choices=genderChoices, null=True, blank=True)
-    photo = models.ImageField(upload_to='users_photo', null=True, blank=True)
+    photo = models.ImageField(upload_to='users_photos', null=True, blank=True)
 
     class Meta:
-        db_table = 'profile'
+        db_table = 'Profile'
         verbose_name = 'Профиль'
         verbose_name_plural = 'Профили'
 

@@ -7,17 +7,17 @@ import Footer from './components/Footer/Footer';
 
 import Nav2 from './components/Nav2/Nav2';
 import Settings from './pages/Settings/Settings';
-// import Profile from './pages/Profile/Profile';
-// import Courses from './pages/Courses/Courses';
-// import Nav from './components/Nav/Nav';
-// import Catalog from './pages/Catalog/Catalog';
+import Profile from './pages/Profile/Profile';
+import Courses from './pages/Courses/Courses';
+import Nav from './components/Nav/Nav';
+import Catalog from './pages/Catalog/Catalog';
 function App() {
   return (
     <>
       <Nav2 />
-      <Settings/>
+        {/*<Settings/>*/}
       {/* <Nav /> */}
-      {/* <Catalog/> */}
+      <Catalog/>
       {/* <Auth/> */}
       {/* <Header /> */}
       {/* <Home /> */}

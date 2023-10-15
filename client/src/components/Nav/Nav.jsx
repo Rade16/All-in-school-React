@@ -4,6 +4,8 @@ import Modal from "../Modal/Modal";
 import Reg from "../Reg/Reg";
 import Auth from "../Auth/Auth";
 import { useState } from "react";
+import axios from "axios";
+
 const Nav = () => {
   const [modalActive, setModalActive] = useState(false);
   const [modalActive2, setModalActive2] = useState(false);
@@ -16,7 +18,7 @@ const Nav = () => {
         <nav className="nav">
           <ul className="nav__list">
             <li>
-              <a className="nav-link" href="#">
+              <a className="nav-link" href="/">
                 Главная
               </a>
             </li>
@@ -26,7 +28,7 @@ const Nav = () => {
               </a>
             </li>
             <li>
-              <a className="nav-link" href="#">
+              <a className="nav-link" href="/catalog/">
                 Каталог
               </a>
             </li>

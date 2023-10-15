@@ -48,7 +48,7 @@ const Nav2 = () => {
           </div>
           <ul className="nav__list">
             <li>
-              <a className="nav-link" href="#">
+              <a className="nav-link" href="/">
                 Главная
               </a>
             </li>
@@ -58,7 +58,7 @@ const Nav2 = () => {
               </a>
             </li>
             <li>
-              <a className="nav-link" href="#">
+              <a className="nav-link" href="/catalog/">
                 Каталог
               </a>
             </li>
