@@ -11,9 +11,9 @@
   width: 400px;
   height: 600px;
   padding: 25px;
-  background-color: #161616;
-  box-shadow: 0px 15px 60px #cc9933;
-  outline: 1px solid #1f2023;
+  background: #1f1f1f67;
+  backdrop-filter: blur(10px);
+  border: 1px solid #ffffff70;
   border-radius: 10px;
 }
 
@@ -33,7 +33,7 @@
 }
 
 .reg__welcome-line-1 {
-  color: #cc9933;
+  color: #ffffffb4;
   font-weight: 600;
   font-size: 40px;
 }
@@ -51,14 +51,14 @@
 .reg__form-inp {
   padding: 11px 25px;
   background: transparent;
-  border: 1px solid #e3e3e3;
+  border: 1px solid #ffffff70;
   line-height: 1;
   border-radius: 8px;
   margin-bottom: 20px;
 }
 
 .reg__form-inp:focus {
-  border: 1px solid #cc9933;
+  border: 1px solid #ffffff70;
 }
 
 
@@ -67,7 +67,7 @@
   width: 100%;
   background: none;
   font-size: 20clearpx;
-  color: #cc9933;
+  color: #ffffffb4;
   border: none;
   padding: 0;
   margin: 0;
@@ -84,14 +84,14 @@
 .reg__submit-button {
   display: block;
   width: 100%;
-  color: #cc9933;
+  color: #ffffffb4;
   background-color: transparent;
   font-weight: 600;
   font-size: 14px;
   margin: 0;
   padding: 14px 13px 12px 13px;
   border: 0;
-  outline: 1px solid #cc9933;
+  border: 1px solid #ffffffc4;
   border-radius: 8px;
   line-height: 1;
   cursor: pointer;
@@ -100,8 +100,8 @@
 
 .reg__submit-button:hover {
   transition: all ease-in-out .3s;
-  background-color: #cc9933;
-  color: #161616;
+  background: #81818149;
+  color: #ffffff;
   cursor: pointer;
 }
 
