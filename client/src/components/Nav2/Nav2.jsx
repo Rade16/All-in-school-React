@@ -78,7 +78,7 @@ const Nav2 = () => {
             </div>
             <div className="quit__buttons-line">
               <button onClick={logoutUser} className="quit__button">Да</button>
-              <button className="quit__button">Нет</button>
+              <button className="quit__button" onClick={()=>setModalActive(false)}>Нет</button>
             </div>
           </div>
         </div>
