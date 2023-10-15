@@ -6,25 +6,35 @@ from .models import Profile
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.db.utils import IntegrityError
+from email_validator import validate_email, EmailNotValidError
 
 
 @api_view(['POST'])
 def signUp(request):
     if request.method == 'POST':
+        data = list(request.data.values())
+
         for value in request.data.values():
             if not value:
                 return Response({'status': 'Заполните все поля!'})
 
+        second_name, first_name, last_name, username, email, password = data
+
+        if ' ' in username:
+            return Response({'status': 'В логине не должно быть пробелов!'})
+
         try:
-            user = User.objects.create_user(username=request.data['username'],
-                                            email=request.data['email'],
-                                            password=request.data['password'])
+            emailinfo = validate_email(email)
+            email = emailinfo.normalized
+        except EmailNotValidError:
+            return Response({'status': 'Недействительный E-mail!'})
+
+        try:
+            user = User.objects.create_user(username=username, email=email, password=password)
         except IntegrityError:
             return Response({'status': 'Логин уже занят!'})
 
-        Profile.objects.create(user=user, first_name=request.data['first_name'],
-                               second_name=request.data['second_name'],
-                               last_name=request.data['last_name'])
+        Profile.objects.create(user=user, first_name=first_name, second_name=second_name, last_name=last_name)
 
         return Response({'status': 'Аккаунт создан!'}, status=status.HTTP_201_CREATED)
     return Response(status=status.HTTP_403_FORBIDDEN)
