@@ -31,7 +31,7 @@ margin-bottom: 20px;
   font-weight: 600;
   margin-bottom: 20px;
 }
-/*theme-button*/
+/*theme-.settings__delete-button*/
 .theme-checkbox {
   --toggle-size: 16px;
   -webkit-appearance: none;
@@ -83,7 +83,7 @@ margin-bottom: 20px;
 
 /*удалить аккаунт*/
 
-button {
+.settings__delete-button {
   appearance: none;
   background-color: transparent;
   border: 2px solid #ffffff13;
@@ -110,18 +110,18 @@ button {
   will-change: transform;
  }
  
- button:disabled {
+ .settings__delete-button:disabled {
   pointer-events: none;
  }
  
- button:hover {
+ .settings__delete-button:hover {
   color: #ffffff;
   background-color: #ff000057;
   backdrop-filter: blur(10px);
   transform: translateY(-2px);
  }
  
- button:active {
+ .settings__delete-button:active {
   box-shadow: none;
   transform: translateY(0);
  }
