@@ -2,8 +2,18 @@ import "./_nav2.scss";
 import logo from "./../../img/logo.svg";
 import Modal from "./../Modal/Modal";
 import { useState } from "react";
+import axios from "axios";
 const Nav2 = () => {
-  const [modalActive, setModalActive] = useState(true);
+  function logoutUser(event){
+    axios({
+      method: 'get',
+      url: '/logout-user/',
+    }).then((response) => {
+      window.location.reload()
+    })
+  }
+
+  const [modalActive, setModalActive] = useState(false);
   return (
     <header className="header__nav">
       <div className="header__container__nav">
@@ -67,7 +77,7 @@ const Nav2 = () => {
               <p>Вы действитель хотите выйти из аккаунта?</p>
             </div>
             <div className="quit__buttons-line">
-              <button className="quit__button">Да</button>
+              <button onClick={logoutUser} className="quit__button">Да</button>
               <button className="quit__button">Нет</button>
             </div>
           </div>

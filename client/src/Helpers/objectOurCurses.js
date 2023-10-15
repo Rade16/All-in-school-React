@@ -1,5 +1,5 @@
 import hairdresser from './../img/Courses/hairdresser.png';
-import barber from './../img/Courses/barber.png';
+import barber from './../img/Courses/Barber.png';
 import manicure from './../img/Courses/manicure.png';
 import hair_extension from './../img/Courses/hair_extension.png';
 import brow_maker from './../img/Courses/brow_maker.png';
