@@ -2,6 +2,8 @@ from django.shortcuts import render
 
 
 def home(request):
+    context = {'type': 'no-auth'}
     if request.user.is_authenticated:
-        return render(request, 'user_menu.html')
-    return render(request, 'guest_menu.html')
+        context = {'type': 'auth'}
+
+    return render(request, 'menu.html', context=context)
