@@ -10,19 +10,36 @@ const Settings = () => {
         <div className="settings__block">
           <h1 className="settings__name">Сменить тему:</h1>
           <div className="settings__button">
-            <input type="checkbox" className="theme-checkbox"></input>
+            <div class="toggle-switch">
+              <label class="switch-label">
+                <input type="checkbox" class="checkbox" />
+                <span class="slider"></span>
+              </label>
+            </div>
           </div>
         </div>
+
+        
         <div className="settings__block">
           <h1 className="settings__name">Сменить язык:</h1>
           <div className="settings__button">
-            <input type="checkbox" className="theme-checkbox"></input>
+            <div class="toggle-switch">
+              <label class="switch-label">
+                <input type="checkbox" class="checkbox" />
+                <span class="slider"></span>
+              </label>
+            </div>
           </div>
         </div>
         <div className="settings__block">
           <h1 className="settings__name">Удалить аккаунт:</h1>
           <div className="settings__button">
-            <button onClick={() => setModalActive(true)} className="settings__delete-button">Удалить аккаунт</button>
+            <button
+              onClick={() => setModalActive(true)}
+              className="settings__delete-button"
+            >
+              Удалить аккаунт
+            </button>
           </div>
         </div>
       </div>
@@ -30,11 +47,22 @@ const Settings = () => {
         <div className="quit">
           <div className="quit__container">
             <div className="quit__text">
-              <p>Вы <b>ТОЧНО</b> хотите <b><span style={{color: "#ff000057"}}>удалить</span></b> аккаунт?</p>
+              <p>
+                Вы <b>ТОЧНО</b> хотите{" "}
+                <b>
+                  <span style={{ color: "#ff000057" }}>удалить</span>
+                </b>{" "}
+                аккаунт?
+              </p>
             </div>
             <div className="quit__buttons-line">
               <button className="quit__button">Да</button>
-              <button className="quit__button" onClick={()=>setModalActive(false)}>Нет</button>
+              <button
+                className="quit__button"
+                onClick={() => setModalActive(false)}
+              >
+                Нет
+              </button>
             </div>
           </div>
         </div>
