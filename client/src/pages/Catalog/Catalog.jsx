@@ -1,5 +1,5 @@
 import React from "react";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import "./_catalog.scss";
 import {objectOurCourses} from "../../Helpers/objectOurCurses";
 import OurCoursesCard from '../../components/OurCoursesCard/OurCoursesCard'
@@ -9,22 +9,20 @@ import img from "../../img/Courses/Barber.png";
 const OurCourses = () => {
     const [courses, setCourses] = useState([]);
 
-    const result = courses.map((element, index) => {
-        return <OurCoursesCard key={index} object={element}/>;
-    });
+    useEffect(() => {
+        getCourses()
+    }, [])
 
     function getCourses() {
         axios({
             method: 'get',
             url: '/get-courses/'
         }).then((response) => {
-            const data = response.data
-            setCourses(data)
+            setCourses(response.data)
         })
     }
 
     return (
-
         <div className="ourCourses">
             <div className="ourCourses__header">
                 <div className="ourCourses__header-container">
@@ -39,8 +37,9 @@ const OurCourses = () => {
                         Наши курсы
                     </h1>
                     <div className="ourCourses__catalog-courses" id='catalog'>
-                        {result}
-                        {getCourses()}
+                        {courses.map((element, index) => {
+                            return <OurCoursesCard key={index} object={element}/>;
+                        })}
                     </div>
                 </div>
             </div>

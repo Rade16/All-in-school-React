@@ -12,7 +12,10 @@ function Auth(props) {
             data: {
                 username: document.getElementById('auth_username').value,
                 password: document.getElementById('auth_password').value,
-            }
+            },
+            xsrfCookieName: 'csrftoken',
+            xsrfHeaderName: 'X-CSRFTOKEN',
+            withCredentials: true
         }).then((response) => {
             setNewStatus(response.data.status)
 

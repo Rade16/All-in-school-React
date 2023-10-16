@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.decorators.csrf import ensure_csrf_cookie
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
@@ -10,19 +11,19 @@ from email_validator import validate_email, EmailNotValidError
 
 
 @api_view(['POST'])
+@ensure_csrf_cookie
 def signUp(request):
     if request.method == 'POST':
         data = list(request.data.values())
 
         for value in request.data.values():
+            if ' ' in value:
+                return Response({'status': 'Укажите данные без пробелов!'})
+
             if not value:
                 return Response({'status': 'Заполните все поля!'})
 
         second_name, first_name, last_name, username, email, password = data
-
-        if ' ' in username:
-            return Response({'status': 'В логине не должно быть пробелов!'})
-
         try:
             emailinfo = validate_email(email)
             email = emailinfo.normalized
@@ -41,6 +42,7 @@ def signUp(request):
 
 
 @api_view(['POST'])
+@ensure_csrf_cookie
 def signIn(request):
     if request.method == 'POST':
         for value in request.data.values():
@@ -56,7 +58,10 @@ def signIn(request):
     return Response(status=status.HTTP_403_FORBIDDEN)
 
 
-@api_view(['GET'])
+@api_view(['POST'])
+@ensure_csrf_cookie
 def logoutUser(request):
-    logout(request)
-    return Response(status=status.HTTP_200_OK)
+    if request.method == 'POST':
+        logout(request)
+        return Response(status=status.HTTP_200_OK)
+    return Response(status=status.HTTP_403_FORBIDDEN)

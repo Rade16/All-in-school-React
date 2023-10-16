@@ -16,11 +16,13 @@ function Reg(props) {
                 username: document.getElementById('username').value,
                 email: document.getElementById('email').value,
                 password: document.getElementById('password').value,
-            }
+            },
+            xsrfCookieName: 'csrftoken',
+            xsrfHeaderName: 'X-CSRFTOKEN',
+            withCredentials: true
         }).then((response) => {
             setNewStatus(response.data.status)
         })
-
         event.preventDefault()
     }
 

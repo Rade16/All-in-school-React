@@ -4,7 +4,6 @@ import Modal from "../Modal/Modal";
 import Reg from "../Reg/Reg";
 import Auth from "../Auth/Auth";
 import { useState } from "react";
-import axios from "axios";
 
 const Nav = () => {
   const [modalActive, setModalActive] = useState(false);
