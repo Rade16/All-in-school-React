@@ -24,7 +24,7 @@ function App() {
       {/* <Header /> */}
       {/* <Home /> */}
       {/* <Profile /> */}
-      {/* <Courses /> */}
+      <Courses />
       <Footer />
     </>
   );
