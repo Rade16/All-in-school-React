@@ -21,6 +21,7 @@ from django.conf import settings
 from . import views
 
 urlpatterns = [
+    path('', include('settings.urls')),
     path('', include('auth_sys.urls')),
     path('', include('courses.urls')),
     path('', views.home, name='home'),
