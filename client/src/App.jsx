@@ -11,13 +11,15 @@ import Profile from './pages/Profile/Profile';
 import Courses from './pages/Courses/Courses';
 import Nav from './components/Nav/Nav';
 import Catalog from './pages/Catalog/Catalog';
+import AboutCourse from './components/AboutCourse/AboutCourse';
 function App() {
   return (
     <>
       <Nav2 />
-        {/*<Settings/>*/}
+      <AboutCourse />
+      {/* <Settings /> */}
       {/* <Nav /> */}
-      <Catalog/>
+      {/* <Catalog /> */}
       {/* <Auth/> */}
       {/* <Header /> */}
       {/* <Home /> */}
