@@ -6,7 +6,13 @@ from .models import Course
 class CourseAdmin(admin.ModelAdmin):
     list_display = ['name', 'price']
     fieldsets = [
-        ('Информация о курсе', {'fields': ['name', 'price', 'image']})
+        ('Информация о курсе', {'fields': ['name', 'price', 'image']}),
+        ('Изображение заголовка страницы', {'fields': ['header_image']}),
+        ('Изображения на странице', {'fields': ['about_image_1', 'about_image_2', 'about_image_3']}),
+        ('Описание курса', {'fields': ['about_text_1', 'about_text_2']}),
+        ('Что получит пользователь', {
+            'fields': ['you_get_title_1', 'you_get_text_1', 'you_get_title_2', 'you_get_text_2', 'you_get_title_3',
+                       'you_get_text_3']})
     ]
     search_fields = ['name']
     ordering = ['-price']
