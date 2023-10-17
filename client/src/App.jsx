@@ -15,7 +15,7 @@ import AboutCourse from './components/AboutCourse/AboutCourse';
 function App() {
   return (
     <>
-      <Nav2 />
+      <Nav />
       <AboutCourse />
       {/* <Settings /> */}
       {/* <Nav /> */}
@@ -24,7 +24,7 @@ function App() {
       {/* <Header /> */}
       {/* <Home /> */}
       {/* <Profile /> */}
-      <Courses />
+      {/* <Courses /> */}
       <Footer />
     </>
   );

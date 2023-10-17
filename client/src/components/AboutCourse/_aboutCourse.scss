@@ -18,8 +18,8 @@
 }
 
 .aboutCourse__body {
-  padding: 1px;
-  height: 2000px;
+  padding: 40px;
+  height: auto;
 }
 
 .aboutCourse__header-container {
@@ -31,7 +31,7 @@
   margin: 0 auto;
 }
 .aboutCourse__title {
-  margin-top: 20px;
+  margin-top: 40px;
   font-size: 42px;
 }
 .aboutCourse__text-block1 {
@@ -49,17 +49,62 @@
   font-size: 32px;
 }
 .aboutCourse__text-block2 {
-  margin-top: -300px;
+  margin-top: -250px;
   display: flex;
   justify-content: space-between;
   align-items: end;
 }
 .aboutCourse__text-block2-image {
+  
   border-radius: 20px;
 }
 
 .aboutCourse__text-block2-text {
   text-align: left;
-  width: 710px;
+  width:382px;
   font-size: 32px;
+}
+.aboutCourse__whatYouGet-title{
+  margin-top: 40px;
+  font-size: 42px;
+  font-weight: 400;
+}
+
+.aboutCourse__whatYouGet-text{
+  margin-top: 10px;
+  font-size: 42px;
+  font-weight: 200;
+}
+
+.aboutCourse__whatPutUp-block{
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.aboutCourse__whatPutUp-text{
+  width: 670px;
+  font-size: 32px;
+
+}
+
+.aboutCourse__whatPutUp-img{
+  border-radius: 20px;
+
+}
+
+.aboutCourse__regButton{
+  user-select: none;
+  cursor: pointer;
+  margin-top: 40px;
+  width: 400px;
+  height: 70px;
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+  background-color: #ffc700;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
