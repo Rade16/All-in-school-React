@@ -1,0 +1,51 @@
+.studentCard{
+  width: 235px;
+  height: 380px;
+  background: linear-gradient(0deg, #FED500 54.97%, rgba(217, 217, 217, 0.00) 117.33%, #121212 117.33%);
+  border-radius: 0px 0px 200px 200px;
+}
+.studentCard__container
+{
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ text-align: center;
+}
+.studentCard__avatar
+{
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  margin-top: -50px;
+
+}
+
+.studentCard__fullName{
+  margin-top: 25px;
+  color: #000000;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.studentCard__role{
+  margin-top: 30px;
+  font-size: 15px;
+  font-weight: 400;
+  color: #000000;
+}
+
+.studentCard__button{
+  margin-top: 35px;
+  width: 110px;
+  height: 25px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #000000;
+  color: #000000;
+  font-size: 11px;
+  font-weight: 400;
+}

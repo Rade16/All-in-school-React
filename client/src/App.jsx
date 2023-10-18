@@ -12,11 +12,13 @@ import Courses from './pages/Courses/Courses';
 import Nav from './components/Nav/Nav';
 import Catalog from './pages/Catalog/Catalog';
 import AboutCourse from './components/AboutCourse/AboutCourse';
+import Group from './pages/Group/Group';
 function App() {
   return (
     <>
       <Nav />
-      <AboutCourse />
+      {/* <AboutCourse /> */}
+    <Group/>
       {/* <Settings /> */}
       {/* <Nav /> */}
       {/* <Catalog /> */}
