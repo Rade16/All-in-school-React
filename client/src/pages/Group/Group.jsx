@@ -13,9 +13,9 @@ const Group = () => {
           })}
         </div>
 
-        <div className="group__createGroupChat">
+        <button className="group__createGroupChat">
         Создать групповой чат
-        </div>
+        </button>
       </div>
     </div>
 
