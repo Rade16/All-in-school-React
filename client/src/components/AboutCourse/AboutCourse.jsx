@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {objectOurCourses} from '../../Helpers/objectOurCurses';
+import {objectOurCourses} from '../../Helpers/objectOurCourses';
 import './_aboutCourse.scss';
 import Modal from "../Modal/Modal";
 import Reg from "../Reg/Reg";
