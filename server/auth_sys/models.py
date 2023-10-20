@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from courses.models import Course
 
 
 class Profile(models.Model):
@@ -7,11 +8,20 @@ class Profile(models.Model):
     genderFemale = 'F'
 
     genderChoices = [
-        (genderMale, 'Male'),
-        (genderFemale, 'Female')
+        (genderMale, 'Мужчина'),
+        (genderFemale, 'Женщина')
+    ]
+
+    student = 'Студент'
+    teacher = 'Преподаватель'
+
+    typeChoices = [
+        (student, student),
+        (teacher, teacher)
     ]
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    courses = models.ManyToManyField(Course, db_table='UserCourses')
 
     first_name = models.CharField(max_length=150)
     second_name = models.CharField(max_length=150)
@@ -19,7 +29,9 @@ class Profile(models.Model):
 
     telephone = models.BigIntegerField(null=True, blank=True)
     gender = models.CharField(choices=genderChoices, null=True, blank=True)
+    type = models.CharField(choices=typeChoices, default=student)
     photo = models.ImageField(upload_to='users_photos', null=True, blank=True)
+    telegram = models.TextField(null=True, blank=True)
 
     class Meta:
         db_table = 'Profile'

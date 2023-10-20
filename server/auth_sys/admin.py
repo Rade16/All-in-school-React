@@ -9,7 +9,7 @@ class AdminProfile(admin.ModelAdmin):
     fieldsets = [
         ('Отношение к пользователю', {'fields': ['user']}),
         ('Основная информация', {'fields': ['first_name', 'second_name', 'last_name', 'gender']}),
-        ('Второстепенная информация', {'fields': ['telephone', 'photo']})
+        ('Второстепенная информация', {'fields': ['telephone', 'telegram', 'photo']})
     ]
     search_fields = ['user', 'telephone']
     list_filter = [('gender', admin.ChoicesFieldListFilter)]

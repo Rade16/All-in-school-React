@@ -24,6 +24,8 @@ urlpatterns = [
     path('', include('settings.urls')),
     path('', include('auth_sys.urls')),
     path('', include('courses.urls')),
+    path('', include('group.urls')),
     path('', views.home, name='home'),
+    path('get-site-info/', views.getSiteInfo, name='get-site-info'),
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

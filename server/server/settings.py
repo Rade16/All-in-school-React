@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'settings',
     'auth_sys',
     'courses',
+    'server',
+    'group',
     'rest_framework',
 ]
 

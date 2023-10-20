@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {objectOurCourses} from '../../Helpers/objectOurCurses';
+import {objectOurCourses} from '../../Helpers/objectOurCourses';
 import './_aboutCourse.scss';
 import Modal from "../Modal/Modal";
 import Reg from "../Reg/Reg";
@@ -33,7 +33,8 @@ const AboutCourse = () => {
         getCourseInfo()
     }, [])
 
-    function getCourseInfo() {
+
+    function getCourseId() {
         let id = 0
         try {
             id = document.getElementById('auth').getAttribute('data')
@@ -41,11 +42,15 @@ const AboutCourse = () => {
         } catch (error) {
             id = document.getElementById('no-auth').getAttribute('data')
         }
+        return id
+    }
+
+    function getCourseInfo() {
         axios({
             method: 'post',
             url: '/get-course-info/',
             data: {
-                id: id
+                id: getCourseId()
             },
             xsrfCookieName: 'csrftoken',
             xsrfHeaderName: 'X-CSRFTOKEN',
@@ -53,6 +58,23 @@ const AboutCourse = () => {
         }).then((response) => {
             setCourseInfo(response.data)
         })
+    }
+
+    function addUserToCourse() {
+        if (userIsAuth) {
+            axios({
+                method: "post",
+                url: '/add-user-to-course/',
+                data: {
+                    courseId: getCourseId()
+                },
+                xsrfCookieName: 'csrftoken',
+                xsrfHeaderName: 'X-CSRFTOKEN',
+                withCredentials: true
+            }).then((response) => {
+                window.location.href = '/user-courses/'
+            })
+        }
     }
 
     return (
@@ -105,8 +127,8 @@ const AboutCourse = () => {
                             <img src={courseInfo.about_image_3} alt="" className='aboutCourse__whatPutUp-img'/>
                         </div>
                     </div>
-                    <div className="aboutCourse__regButton">
-                        {userIsAuth ? 'Записаться на курс': 'Вы не зарегистрированы!'}
+                    <div className="aboutCourse__regButton" onClick={addUserToCourse}>
+                        {userIsAuth ? 'Записаться на курс' : 'Вы не зарегистрированы!'}
                     </div>
                 </div>
             </main>

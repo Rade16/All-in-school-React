@@ -31,7 +31,7 @@ const Nav2 = () => {
                                 <a href="#">Профиль</a>
                             </li>
                             <li>
-                                <a href="#">Мои курсы</a>
+                                <a href="/user-courses/">Мои курсы</a>
                             </li>
                             <li>
                                 <a href="#">Пройденный материал</a>
@@ -40,7 +40,7 @@ const Nav2 = () => {
                                 <a href="#">Статистика</a>
                             </li>
                             <li>
-                                <a href="#">Моя группа</a>
+                                <a href="/group/">Моя группа</a>
                             </li>
                             <li>
                                 <a href="/settings/">Настройки</a>

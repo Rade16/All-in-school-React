@@ -228,6 +228,14 @@ module.exports = function (webpackEnv) {
       guest_course: [
           paths.appSrc + '/guest_course'
       ].filter(Boolean),
+
+      user_courses: [
+          paths.appSrc + '/user_courses'
+      ].filter(Boolean),
+
+      user_group: [
+          paths.appSrc + '/user_group'
+      ].filter(Boolean),
     },
     output: {
       // The build folder.
@@ -681,6 +689,60 @@ module.exports = function (webpackEnv) {
             chunks: ['user_course', 'guest_course'],
             template: paths.courseHtml,
             filename: 'course.html'
+          },
+          isEnvProduction
+            ? {
+                minify: {
+                  removeComments: true,
+                  collapseWhitespace: true,
+                  removeRedundantAttributes: true,
+                  useShortDoctype: true,
+                  removeEmptyAttributes: true,
+                  removeStyleLinkTypeAttributes: true,
+                  keepClosingSlash: true,
+                  minifyJS: true,
+                  minifyCSS: true,
+                  minifyURLs: true,
+                },
+              }
+            : undefined
+        )
+      ),
+        new HtmlWebpackPlugin(
+        Object.assign(
+          {},
+          {
+            inject: true,
+            chunks: ['user_courses'],
+            template: paths.userCourses,
+            filename: 'user_courses.html'
+          },
+          isEnvProduction
+            ? {
+                minify: {
+                  removeComments: true,
+                  collapseWhitespace: true,
+                  removeRedundantAttributes: true,
+                  useShortDoctype: true,
+                  removeEmptyAttributes: true,
+                  removeStyleLinkTypeAttributes: true,
+                  keepClosingSlash: true,
+                  minifyJS: true,
+                  minifyCSS: true,
+                  minifyURLs: true,
+                },
+              }
+            : undefined
+        )
+      ),
+        new HtmlWebpackPlugin(
+        Object.assign(
+          {},
+          {
+            inject: true,
+            chunks: ['user_group'],
+            template: paths.userGroup,
+            filename: 'user_group.html'
           },
           isEnvProduction
             ? {

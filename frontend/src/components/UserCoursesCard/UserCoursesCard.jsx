@@ -4,14 +4,10 @@ import './_userCoursesCard.scss';
 function CoursesCard({ object }) {
   return (
     <>
-      <div className='courseCard' style={{ backgroundImage: `url(${object.img})` }}>
+      <div className='courseCard' style={{ backgroundImage: `url(${object.image})` }}>
        
         <div className='courseCard__container'>
-          <h1 className='courseCard__title'>{object.title}</h1>
-          <p className='courseCard__text'>
-            {object.lesson} занятие {object.date}
-            <br />в {object.time}
-          </p>
+          <a href={`/course/${object.id}`} className='courseCard__title'>{object.name}</a>
         </div>
       </div>
     </>

@@ -1,7 +1,7 @@
 import React from "react";
 import {useState, useEffect} from "react";
 import "./_catalog.scss";
-import {objectOurCourses} from "../../Helpers/objectOurCurses";
+import {objectOurCourses} from "../../Helpers/objectOurCourses";
 import OurCoursesCard from '../../components/OurCoursesCard/OurCoursesCard'
 import axios from "axios";
 import img from "../../img/Courses/Barber.png";
