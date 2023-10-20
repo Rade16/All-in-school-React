@@ -27,7 +27,7 @@ class Profile(models.Model):
     second_name = models.CharField(max_length=150)
     last_name = models.CharField(max_length=150)
 
-    telephone = models.BigIntegerField(null=True, blank=True)
+    telephone = models.CharField(max_length=20, null=True, blank=True)
     gender = models.CharField(choices=genderChoices, null=True, blank=True)
     type = models.CharField(choices=typeChoices, default=student)
     photo = models.ImageField(upload_to='users_photos', null=True, blank=True)

@@ -236,6 +236,10 @@ module.exports = function (webpackEnv) {
       user_group: [
           paths.appSrc + '/user_group'
       ].filter(Boolean),
+
+      user_profile: [
+          paths.appSrc + '/user_profile'
+      ].filter(Boolean),
     },
     output: {
       // The build folder.
@@ -743,6 +747,33 @@ module.exports = function (webpackEnv) {
             chunks: ['user_group'],
             template: paths.userGroup,
             filename: 'user_group.html'
+          },
+          isEnvProduction
+            ? {
+                minify: {
+                  removeComments: true,
+                  collapseWhitespace: true,
+                  removeRedundantAttributes: true,
+                  useShortDoctype: true,
+                  removeEmptyAttributes: true,
+                  removeStyleLinkTypeAttributes: true,
+                  keepClosingSlash: true,
+                  minifyJS: true,
+                  minifyCSS: true,
+                  minifyURLs: true,
+                },
+              }
+            : undefined
+        )
+      ),
+        new HtmlWebpackPlugin(
+        Object.assign(
+          {},
+          {
+            inject: true,
+            chunks: ['user_profile'],
+            template: paths.userProfile,
+            filename: 'user_profile.html'
           },
           isEnvProduction
             ? {

@@ -30,13 +30,29 @@ const objectOurCourses = [
     img: barber,
     title: 'Барбер с нуля',
     price: '80 000',
-    lessons : {
-      lesson1: "История барберинга, введение",
-      lesson2: "Основы трихологии",
-      lesson3: "Психология общения с клиентами",
-      lesson4: "Техника удлиненных стрижек",
-      lesson5: "Техника разделения волос на зоны",
-    }
+    lessons : [
+      {
+        lessonTitle: "История барберинга, введение",
+        lessonLink: "#",
+      },
+      {
+        lessonTitle: "Основы трихологии",
+        lessonLink: "#",
+      },
+      {
+        lessonTitle: "Психология общения с клиентами",
+        lessonLink: "#",
+      },
+      {
+        lessonTitle: "Техника удлиненных стрижек",
+        lessonLink: "#",
+      },
+      {
+        lessonTitle: "Техника разделения волос на зоны",
+        lessonLink: "#",
+      },
+   ]
+    ,
   },
   {
     img: manicure,

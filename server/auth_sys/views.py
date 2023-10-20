@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views.decorators.csrf import ensure_csrf_cookie
+from django.contrib.auth.decorators import login_required
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
@@ -8,6 +9,60 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.db.utils import IntegrityError
 from email_validator import validate_email, EmailNotValidError
+from .serializers import ProfileSerializer
+
+@login_required(login_url='home')
+def profileSettings(request):
+    return render(request, 'user_profile.html')
+
+@api_view(['GET'])
+def getProfileSettings(request):
+    profile = Profile.objects.select_related('user').get(user__id=request.user.id)
+    serializer = ProfileSerializer(profile)
+    data={'email': profile.user.email}
+    data.update(serializer.data)
+    return Response(data, status=status.HTTP_200_OK)
+
+@api_view(['POST'])
+@ensure_csrf_cookie
+def chageProfileSettings(request):
+    if request.method == 'POST':
+        first_name = request.data['first_name']
+        second_name = request.data['second_name']
+        last_name = request.data['last_name']
+        email = request.data['email']
+
+        try:
+            emailinfo = validate_email(email)
+            email = emailinfo.normalized
+        except EmailNotValidError:
+            return Response({'status': 'Недействительный E-mail!'})
+
+        for value in [first_name, second_name, last_name, email]:
+            if ' ' in value:
+                return Response({'status': 'Укажите данные без пробелов!'})
+
+            if not value:
+                return Response({'status': 'Заполните все поля!'})
+
+        telephone = request.data['telephone']
+        telegram = request.data['telegram']
+        gender = request.data['gender']
+
+        profile = Profile.objects.get(user__id=request.user.id)
+        profile.first_name = first_name
+        profile.second_name = second_name
+        profile.last_name = last_name
+        profile.telephone = telephone
+        profile.telegram = telegram
+        profile.gender = gender
+        profile.save()
+
+        user = User.objects.get(id=request.user.id)
+        user.email = email
+        user.save()
+
+        return Response({'status': 'Данные изменены'}, status=status.HTTP_200_OK)
 
 
 @api_view(['POST'])

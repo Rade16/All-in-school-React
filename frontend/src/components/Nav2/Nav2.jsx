@@ -28,7 +28,7 @@ const Nav2 = () => {
 
                         <ul className="menu">
                             <li>
-                                <a href="#">Профиль</a>
+                                <a href="/profile-settings/">Профиль</a>
                             </li>
                             <li>
                                 <a href="/user-courses/">Мои курсы</a>

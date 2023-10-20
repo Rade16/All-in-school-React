@@ -36,3 +36,26 @@
   font-weight: 600;
   font-size: 26px;
 }
+
+.courseProgress__lessons-list
+{
+margin-top: 30PX;
+}
+.courseProgress__lessons-list-element{
+  
+  display: flex;
+  padding: 10PX 0;
+}
+
+.courseProgress__lessons-list-element-text{
+  color: #F0BF5F;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.courseProgress__lessons-list-element-link{
+  color: #FF8B2C;
+  font-size: 16px;
+  font-weight: 400;
+  margin-left: auto;
+}

@@ -63,6 +63,7 @@ module.exports = {
   appIndexJs: resolveModule(resolveApp, 'src/user_menu'),
   userGroup: resolveApp('public/user_group.html'),
   userCourses: resolveApp('public/user_courses.html'),
+  userProfile: resolveApp('public/user_profile.html'),
   appPackageJson: resolveApp('package.json'),
   appSrc: resolveApp('src'),
   appTsConfig: resolveApp('tsconfig.json'),
