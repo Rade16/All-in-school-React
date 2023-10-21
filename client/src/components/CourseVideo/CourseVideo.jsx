@@ -24,8 +24,10 @@ const CourseVideo = () => {
             Подробнее...
           </p>
         </div>
-        <div className="courseVideo__button">
+        <div className="courseVideo__button" >
+          <a href="#" className="courseVideo__button-link">
           Следующий урок
+          </a>
         </div>
       </div>
     </div>
