@@ -41,6 +41,7 @@
   justify-content: space-between;
 }
 .aboutCourse__text-block1-image {
+  object-fit: cover;
   border-radius: 20px;
   width: 460px;
   height: 660px;
@@ -58,7 +59,7 @@
   align-items: end;
 }
 .aboutCourse__text-block2-image {
-  
+  object-fit: cover;
   border-radius: 20px;
   width: 565px;
   height: 595px;

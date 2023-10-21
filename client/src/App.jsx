@@ -19,15 +19,15 @@ function App() {
   return (
     <>
       <Nav />
-      <AboutCourse />
+      {/* <AboutCourse /> */}
       {/* <Group /> */}
       {/* <CourseVideo /> */}
       {/* <CourseProgress /> */}
       {/* <Settings /> */}
       {/* <Catalog /> */}
       {/* <Auth /> */}
-      {/* <Header /> */}
-      {/* <Home /> */}
+      <Header />
+      <Home />
       {/* <Profile /> */}
       {/* <Courses /> */}
       <Footer />

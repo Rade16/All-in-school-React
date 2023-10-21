@@ -1,5 +1,5 @@
 
-import './_footer.scss'
+import './footer.scss'
 import logo from './../../../src/img/logo.svg';
 import telega from './../../../src/img/social/telega.svg';
 import whats from './../../../src/img/social/whats.svg';

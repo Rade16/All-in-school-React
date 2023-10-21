@@ -1,4 +1,4 @@
-import "./_auth.scss";
+import "./auth.scss";
 import {useState} from "react";
 import axios from "axios";
 

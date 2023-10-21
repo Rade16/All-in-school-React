@@ -1,5 +1,5 @@
 import React from 'react'
-import './_courseProgress.scss'
+import './courseProgress.scss'
 import { objectOurCourses } from '../../Helpers/objectOurCourses'
 import CourseProgressList from '../CourseProgressList/CourseProgressList'
 import { objectUserCourses } from '../../Helpers/objectUserCourses'

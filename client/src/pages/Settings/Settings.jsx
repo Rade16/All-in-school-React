@@ -1,5 +1,5 @@
 import React from "react";
-import "./_settings.scss";
+import "./settings.scss";
 import Modal from "./../../components/Modal/Modal";
 import {useState} from "react";
 import axios from "axios";

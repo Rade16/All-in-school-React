@@ -1,5 +1,5 @@
 import React from "react";
-import "./_courseVideo.scss";
+import "./courseVideo.scss";
 import ShakaPlayer from "shaka-player-react";
 import "shaka-player/dist/controls.css";
 import video from "./../../video/GONE.Fludd — TRAXXXMANIA.mp4"

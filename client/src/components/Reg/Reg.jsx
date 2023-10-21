@@ -1,5 +1,5 @@
 import {useState} from "react";
-import "./_reg.scss";
+import "./reg.scss";
 import axios from "axios";
 
 function Reg(props) {

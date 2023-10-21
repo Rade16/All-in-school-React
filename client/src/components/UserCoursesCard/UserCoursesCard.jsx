@@ -1,5 +1,5 @@
 import React from 'react';
-import './_userCoursesCard.scss';
+import './userCoursesCard.scss';
 
 function CoursesCard({ object }) {
   return (

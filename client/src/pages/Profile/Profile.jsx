@@ -1,4 +1,4 @@
-import './_profile.scss';
+import './profile.scss';
 import {useEffect, useState} from "react";
 import axios from "axios";
 
