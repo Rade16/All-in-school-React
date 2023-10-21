@@ -14,13 +14,15 @@ import Catalog from './pages/Catalog/Catalog';
 import AboutCourse from './components/AboutCourse/AboutCourse';
 import Group from './pages/Group/Group';
 import CourseProgress from './components/CourseProgress/CourseProgress';
+import CourseVideo from './components/CourseVideo/CourseVideo';
 function App() {
   return (
     <>
       <Nav />
       {/* <AboutCourse /> */}
     {/* <Group/> */}
-    <CourseProgress/>
+    <CourseVideo/>
+    {/* <CourseProgress/> */}
       {/* <Settings /> */}
       {/* <Nav /> */}
       {/* <Catalog /> */}
