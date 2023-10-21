@@ -15,8 +15,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-modal": "^3.16.1",
-    "sass": "^1.68.0",
-    "shaka-player-react": "^1.1.5"
+    "sass": "^1.68.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
