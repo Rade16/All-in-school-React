@@ -26,9 +26,9 @@ function App() {
       {/* <Settings /> */}
       {/* <Catalog /> */}
       {/* <Auth /> */}
-      <Header />
-      <Home />
-      {/* <Profile /> */}
+      {/* <Header /> */}
+      {/* <Home /> */}
+      <Profile />
       {/* <Courses /> */}
       <Footer />
     </>
