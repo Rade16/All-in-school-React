@@ -34,10 +34,7 @@ const Nav2 = () => {
                                 <a href="/user-courses/">Мои курсы</a>
                             </li>
                             <li>
-                                <a href="#">Пройденный материал</a>
-                            </li>
-                            <li>
-                                <a href="#">Статистика</a>
+                                <a href="/pased-lesson/">Пройденный материал</a>
                             </li>
                             <li>
                                 <a href="/group/">Моя группа</a>

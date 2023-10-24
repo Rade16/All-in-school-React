@@ -24,9 +24,10 @@ class Lesson(models.Model):
 class PastLesson(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)
 
     class Meta:
         db_table = 'PastLesson'
 
     def __str__(self):
-        return self.lesson.name
+        return f'{self.lesson.name} (Курс: {self.course.name})'

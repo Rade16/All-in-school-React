@@ -4,10 +4,10 @@ const CourseProgressList = ({ object }) => {
   return (
     <li className="courseProgress__lessons-list-element">
       <p className="courseProgress__lessons-list-element-text">
-        {object.lessonTitle}
+        {object.name}
       </p>
       <a
-        href={object.lessonLink}
+        href={`/lesson/${object.id}`}
         className="courseProgress__lessons-list-element-link"
       >
         Пройти заново

@@ -84,7 +84,5 @@ def getUserCourses(request):
             data['stoped_lesson_id'] = course.lesson_set.exclude(id__in=pastLessonsId).order_by('number')[0].id
         else:
             data['stoped_lesson_id'] = course.lesson_set.all()[0].id
-
         massiveOfData.append(data)
-
     return Response(massiveOfData, status=status.HTTP_200_OK)
