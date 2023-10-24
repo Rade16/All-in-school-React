@@ -22,13 +22,13 @@ function App() {
       {/* <AboutCourse /> */}
       {/* <Group /> */}
       {/* <CourseVideo /> */}
-      <CourseProgress />
+      {/* <CourseProgress /> */}
       {/* <Settings /> */}
       {/* <Catalog /> */}
       {/* <Auth /> */}
       {/* <Header /> */}
       {/* <Home /> */}
-        {/*<Profile />*/}
+        <Profile />
       {/* <Courses /> */}
       <Footer />
     </>
