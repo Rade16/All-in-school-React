@@ -1,4 +1,4 @@
-import "./_nav2.scss";
+import "./nav2.scss";
 import logo from "./../../img/logo.svg";
 import Modal from "./../Modal/Modal";
 import {useState} from "react";

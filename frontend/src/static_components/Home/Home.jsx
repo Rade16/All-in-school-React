@@ -1,5 +1,5 @@
 
-import './_home.scss'
+import './home.scss'
 import comp from './../../../src/img/home/icons/comp.svg';
 import user from './../../../src/img/home/icons/user.svg';
 import time from './../../../src/img/home/icons/time.svg';

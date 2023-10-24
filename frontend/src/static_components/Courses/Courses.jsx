@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {objectUserCourses} from '../../Helpers/objectUserCourses';
 import UserCoursesCard from '../../components/UserCoursesCard/UserCoursesCard';
-import './_courses.scss';
+import './courses.scss';
 import axios from "axios";
 
 function Courses() {

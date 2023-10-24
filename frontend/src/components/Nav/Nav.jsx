@@ -1,4 +1,4 @@
-import "./_nav.scss";
+import "./nav.scss";
 import logo from "./../../img/logo.svg";
 import Modal from "../Modal/Modal";
 import Reg from "../Reg/Reg";

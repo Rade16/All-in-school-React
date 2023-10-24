@@ -1,6 +1,6 @@
 import React from "react";
 import {useState, useEffect} from "react";
-import "./_catalog.scss";
+import "./catalog.scss";
 import {objectOurCourses} from "../../Helpers/objectOurCourses";
 import OurCoursesCard from '../../components/OurCoursesCard/OurCoursesCard'
 import axios from "axios";

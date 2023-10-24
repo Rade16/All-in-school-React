@@ -1,0 +1,22 @@
+.courseCard {
+  position: relative;
+  width: 565px;
+  height: 375px;
+
+  border-radius: 15px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.courseCard__container {
+  position: relative;
+  z-index: 2;
+  padding-top: 300px;
+  width: 505px;
+  margin: 0 auto;
+}
+.courseCard__title {
+  font-size: 32px;
+  font-weight: bold;
+}

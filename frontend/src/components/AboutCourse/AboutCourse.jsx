@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {objectOurCourses} from '../../Helpers/objectOurCourses';
-import './_aboutCourse.scss';
+import './aboutCourse.scss';
 import Modal from "../Modal/Modal";
 import Reg from "../Reg/Reg";
 import {useState} from "react";

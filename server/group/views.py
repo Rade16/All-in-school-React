@@ -22,7 +22,10 @@ def getGroupOfUser(request):
     profilesInCourses = Profile.objects.none()
     for course in courses:
         profiles = course.profile_set.filter(~Q(user__id=request.user.id))
-        profilesInCourses = profilesInCourses | profiles
+
+        for profile in profiles:
+            if profile not in list(profilesInCourses):
+                profilesInCourses = profilesInCourses | profiles
 
     serializer = ProfileSerializer(profilesInCourses, many=True)
     return Response(serializer.data, status=status.HTTP_200_OK)

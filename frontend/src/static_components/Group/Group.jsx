@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import './_group.scss'
+import './group.scss'
 import {objectStudentsCards} from '../../Helpers/objectStudentsCards'
 import StudentCard from '../../components/studentCard/StudentCard'
 import axios from "axios";

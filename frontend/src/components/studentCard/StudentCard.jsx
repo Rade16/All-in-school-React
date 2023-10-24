@@ -1,5 +1,5 @@
 import React from 'react'
-import './_studentCard.scss'
+import './studentCard.scss'
 const StudentCard = ({object}) => {
   return (
     <div className='studentCard'>

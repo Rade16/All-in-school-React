@@ -7,6 +7,7 @@ from rest_framework.response import Response
 from .serializers import CourseSerializer
 from .models import Course
 from auth_sys.models import Profile
+from lessons.models import PastLesson
 
 
 def catalog(request):
@@ -57,9 +58,33 @@ def addUserToCourse(request):
         return Response(status=status.HTTP_200_OK)
     return Response(status=status.HTTP_403_FORBIDDEN)
 
+
 @api_view(['GET'])
 def getUserCourses(request):
     profile = Profile.objects.get(user__id=request.user.id)
     courses = profile.courses.all()
     serializer = CourseSerializer(courses, many=True)
-    return Response(serializer.data, status=status.HTTP_200_OK)
+
+    massiveOfData = []
+    for i in serializer.data:
+        data = dict(i)
+        data.update({'stoped_lesson_id': ''})
+
+        course = Course.objects.get(pk=data['id'])
+        courseLessons = course.lesson_set.all()
+        pastLessonsId = []
+
+        for lesson in courseLessons:
+            pastLessons = PastLesson.objects.filter(user__id=request.user.id, lesson__id=lesson.id)
+
+            if pastLessons.exists():
+                pastLessonsId.append(pastLessons[0].lesson.id)
+
+        if pastLessonsId:
+            data['stoped_lesson_id'] = course.lesson_set.exclude(id__in=pastLessonsId).order_by('number')[0].id
+        else:
+            data['stoped_lesson_id'] = course.lesson_set.all()[0].id
+
+        massiveOfData.append(data)
+
+    return Response(massiveOfData, status=status.HTTP_200_OK)

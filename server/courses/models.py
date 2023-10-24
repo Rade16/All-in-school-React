@@ -11,7 +11,7 @@ class Course(models.Model):
     about_image_1 = models.ImageField(upload_to='courses_images')
     about_text_1 = models.TextField()
     about_text_2 = models.TextField(null=True, blank=True)
-    about_image_2 = models.ImageField(upload_to='courses_images', null=True, blank=True)
+    about_image_2 = models.ImageField(upload_to='courses_images')
 
     you_get_title_1 = models.CharField(max_length=150)
     you_get_text_1 = models.TextField()
