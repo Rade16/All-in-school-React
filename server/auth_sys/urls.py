@@ -8,5 +8,6 @@ urlpatterns = [
     path('logout-user/', views.logoutUser, name='logoutUser'),
     path('profile-settings/', views.profileSettings, name='profile-settings'),
     path('get-profile-settings/', views.getProfileSettings, name='get-profile-settings'),
+    path('change-profile-photo/', views.changeProfilePhoto, name='change-profile-photo'),
     path('change-profile-settings/', views.chageProfileSettings, name='change-profile-settings')
 ]

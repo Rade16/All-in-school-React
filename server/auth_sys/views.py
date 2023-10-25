@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from django.views.decorators.csrf import ensure_csrf_cookie
 from django.contrib.auth.decorators import login_required
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, parser_classes
 from rest_framework.response import Response
+from rest_framework.parsers import FileUploadParser, MultiPartParser, FormParser, JSONParser
 from rest_framework import status
 from .models import Profile
 from django.contrib.auth.models import User
@@ -11,17 +12,34 @@ from django.db.utils import IntegrityError
 from email_validator import validate_email, EmailNotValidError
 from .serializers import ProfileSerializer
 
+
 @login_required(login_url='home')
 def profileSettings(request):
     return render(request, 'user_profile.html')
+
 
 @api_view(['GET'])
 def getProfileSettings(request):
     profile = Profile.objects.select_related('user').get(user__id=request.user.id)
     serializer = ProfileSerializer(profile)
-    data={'email': profile.user.email}
+    data = {'email': profile.user.email}
     data.update(serializer.data)
     return Response(data, status=status.HTTP_200_OK)
+
+
+@api_view(['POST'])
+@parser_classes([MultiPartParser])
+@ensure_csrf_cookie
+def changeProfilePhoto(request):
+    if request.method == 'POST':
+        profile = Profile.objects.get(user__id=request.user.id)
+        profile.photo = request.FILES.get('photo')
+        profile.save(update_fields=['photo'])
+
+        serializer = ProfileSerializer(profile)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    return Response(status=status.HTTP_403_FORBIDDEN)
+
 
 @api_view(['POST'])
 @ensure_csrf_cookie
@@ -63,6 +81,7 @@ def chageProfileSettings(request):
         user.save()
 
         return Response({'status': 'Данные изменены'}, status=status.HTTP_200_OK)
+    return Response(status=status.HTTP_403_FORBIDDEN)
 
 
 @api_view(['POST'])
