@@ -54,18 +54,8 @@ const Nav2 = () => {
                             </a>
                         </li>
                         <li>
-                            <a className="nav-link" href="#">
-                                Контакты
-                            </a>
-                        </li>
-                        <li>
                             <a className="nav-link" href="/catalog/">
                                 Каталог
-                            </a>
-                        </li>
-                        <li>
-                            <a className="nav-link" href="#">
-                                Учителя
                             </a>
                         </li>
                     </ul>

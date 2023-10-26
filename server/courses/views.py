@@ -25,6 +25,12 @@ def course(request, pk):
 
     return render(request, 'course.html', context=context)
 
+@api_view(['GET'])
+def getFreshCourses(request):
+    courses = Course.objects.all().order_by('upload_date')[:4]
+    serializer = CourseSerializer(courses, many=True)
+    return Response(serializer.data, status=status.HTTP_200_OK)
+
 
 @login_required(login_url='home')
 def userCourses(request):
@@ -81,8 +87,12 @@ def getUserCourses(request):
                 pastLessonsId.append(pastLessons[0].lesson.id)
 
         if pastLessonsId:
-            data['stoped_lesson_id'] = course.lesson_set.exclude(id__in=pastLessonsId).order_by('number')[0].id
+            try:
+                data['stoped_lesson_id'] = course.lesson_set.exclude(id__in=pastLessonsId).order_by('number')[0].id
+                massiveOfData.append(data)
+            except IndexError:
+                pass
         else:
             data['stoped_lesson_id'] = course.lesson_set.all()[0].id
-        massiveOfData.append(data)
+            massiveOfData.append(data)
     return Response(massiveOfData, status=status.HTTP_200_OK)

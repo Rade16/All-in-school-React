@@ -22,6 +22,7 @@ class Course(models.Model):
     you_get_title_3 = models.CharField(max_length=150, null=True, blank=True)
     you_get_text_3 = models.TextField(null=True, blank=True)
 
+    upload_date = models.DateField(auto_now=True)
     about_image_3 = models.ImageField(upload_to='courses_images')
 
     class Meta:

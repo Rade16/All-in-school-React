@@ -28,7 +28,7 @@ def getLessonInfo(request):
         lesson = Lesson.objects.get(pk=request.data['lessonId'])
         serializer = LessonSerializer(lesson)
 
-        data = {'next_lesson_id': ''}
+        data = {'next_lesson_id': '', 'is_final_lesson': False}
         data.update(serializer.data)
 
         course = lesson.course
@@ -38,6 +38,8 @@ def getLessonInfo(request):
         if thisLessonIndex + 1 < len(courseLessons):
             nextLessonId = courseLessons[thisLessonIndex + 1].id
             data['next_lesson_id'] = nextLessonId
+        else:
+            data['is_final_lesson'] = True
 
         return Response(data, status=status.HTTP_200_OK)
     return Response(status=status.HTTP_403_FORBIDDEN)
@@ -59,7 +61,6 @@ def addPastLesson(request):
 def getPasedLesson(request):
     mainData, courses = [], []
     pastLessons = PastLesson.objects.filter(user__id=request.user.id)
-    print(pastLessons)
 
     for pastLesson in pastLessons:
         if pastLesson.course not in courses:

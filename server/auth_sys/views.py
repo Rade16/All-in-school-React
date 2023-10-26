@@ -1,3 +1,4 @@
+import os
 from django.shortcuts import render
 from django.views.decorators.csrf import ensure_csrf_cookie
 from django.contrib.auth.decorators import login_required
@@ -33,6 +34,10 @@ def getProfileSettings(request):
 def changeProfilePhoto(request):
     if request.method == 'POST':
         profile = Profile.objects.get(user__id=request.user.id)
+
+        if profile.photo:
+            os.remove(profile.photo.path)
+
         profile.photo = request.FILES.get('photo')
         profile.save(update_fields=['photo'])
 
