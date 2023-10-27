@@ -12,6 +12,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.db.utils import IntegrityError
 from email_validator import validate_email, EmailNotValidError
 from .serializers import ProfileSerializer
+from django.core.exceptions import ObjectDoesNotExist
 
 
 @login_required(login_url='home')
@@ -131,6 +132,12 @@ def signIn(request):
         user = authenticate(request, username=request.data['username'], password=request.data['password'])
         if user is not None:
             login(request, user)
+
+            try:
+                Profile.objects.get(user__id=user.id)
+            except ObjectDoesNotExist:
+                Profile.objects.create(user=user, first_name=user.username, second_name='', last_name='')
+
             return Response({'status': 'ok'})
         else:
             return Response({'status': 'Пользователь не найден!'})

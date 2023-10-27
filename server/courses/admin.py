@@ -1,6 +1,7 @@
 import os
 from django.contrib import admin
 from .models import Course
+from lessons.models import Lesson
 
 
 class CourseAdmin(admin.ModelAdmin):
@@ -20,6 +21,15 @@ class CourseAdmin(admin.ModelAdmin):
     def delete_queryset(self, request, queryset):
         for obj in queryset:
             os.remove(obj.image.path)
+            os.remove(obj.header_image.path)
+            os.remove(obj.about_image_1.path)
+            os.remove(obj.about_image_2.path)
+            os.remove(obj.about_image_3.path)
+
+            for lesson in Lesson.objects.filter(course__id=obj.id):
+                if lesson.video:
+                    os.remove(lesson.video.path)
+
             obj.delete()
 
 

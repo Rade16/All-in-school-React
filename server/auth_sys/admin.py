@@ -1,6 +1,7 @@
 import os
 from django.contrib import admin
-from django.contrib.auth.models import Group
+from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
+from django.contrib.auth.models import Group, User
 from .models import Profile
 
 
@@ -15,10 +16,20 @@ class AdminProfile(admin.ModelAdmin):
     list_filter = [('gender', admin.ChoicesFieldListFilter)]
 
     def delete_queryset(self, request, queryset):
+        pass
+
+
+class UserAdmin(BaseUserAdmin):
+    def delete_queryset(self, request, queryset):
         for obj in queryset:
-            os.remove(obj.photo.path)
+            profile = Profile.objects.get(user__id=obj.id)
+
+            if profile.photo:
+                os.remove(profile.photo.path)
             obj.delete()
 
 
-admin.site.register(Profile, AdminProfile)
 admin.site.unregister(Group)
+admin.site.unregister(User)
+admin.site.register(Profile, AdminProfile)
+admin.site.register(User, UserAdmin)

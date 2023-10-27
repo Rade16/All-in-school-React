@@ -175,7 +175,7 @@ function Profile(props) {
                             </div>
                             <label for="file" className="custum-file-upload">
                                 <span>Загрузить аватар </span>
-                                <input id="file" type="file" className=""/>
+                                <input id="file" type="file" accept="image/*" className=""/>
                             </label>
                         </div>
                         <div className="profile__gender">
