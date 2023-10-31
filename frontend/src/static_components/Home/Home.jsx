@@ -59,7 +59,9 @@ const Home = () => {
                 </section>
 
                 <section className='popularCours'>
-                    <h2 className='titleOfPage'>Новые курсы</h2>
+                    {
+                        freshCourses.length > 0 ? <h2 className='titleOfPage'>Новые курсы</h2>: ''
+                    }
                     <div className='row'>
                         {
                             freshCourses.map((element) => {

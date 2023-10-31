@@ -25,6 +25,7 @@ def course(request, pk):
 
     return render(request, 'course.html', context=context)
 
+
 @api_view(['GET'])
 def getFreshCourses(request):
     courses = Course.objects.all().order_by('upload_date')[:4]
@@ -40,8 +41,14 @@ def userCourses(request):
 @api_view(['GET'])
 def getCourses(request):
     courses = Course.objects.all()
-    serializer = CourseSerializer(courses, many=True)
-    return Response(serializer.data, status=status.HTTP_200_OK)
+    data = []
+
+    for course in courses:
+        if course.lesson_set.all().count() > 0:
+            serializer = CourseSerializer(course)
+            data.append(serializer.data)
+
+    return Response(data, status=status.HTTP_200_OK)
 
 
 @api_view(['POST'])
@@ -93,6 +100,8 @@ def getUserCourses(request):
             except IndexError:
                 pass
         else:
-            data['stoped_lesson_id'] = course.lesson_set.all()[0].id
-            massiveOfData.append(data)
+            lessonSet = course.lesson_set.all()
+            if lessonSet.count() > 0:
+                data['stoped_lesson_id'] = lessonSet[0].id
+                massiveOfData.append(data)
     return Response(massiveOfData, status=status.HTTP_200_OK)

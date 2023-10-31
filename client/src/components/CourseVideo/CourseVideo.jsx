@@ -12,6 +12,7 @@ const CourseVideo = () => {
     const [discriptionTitle, setdiscriptionTitle] = useState('')
     const [text, setText] = useState('')
     const [nextLessonId, setNextLessonId] = useState('')
+    const [isFinalLesson, setIsFinalLesson] = useState(false)
 
     function getLessonId() {
         return document.getElementById('root').getAttribute('data')
@@ -36,6 +37,7 @@ const CourseVideo = () => {
             setdiscriptionTitle(data.description_title)
             setText(data.text)
             setNextLessonId(data.next_lesson_id)
+            setIsFinalLesson(data.is_final_lesson)
         })
     }, []);
 
@@ -49,6 +51,10 @@ const CourseVideo = () => {
             xsrfCookieName: 'csrftoken',
             xsrfHeaderName: 'X-CSRFTOKEN',
             withCredentials: true
+        }).then((response) => {
+            if (isFinalLesson) {
+                window.location.href = '/pased-lesson/'
+            }
         })
     }
 
@@ -72,6 +78,14 @@ const CourseVideo = () => {
                     nextLessonId ? <div className="courseVideo__button"><a href={`/lesson/${nextLessonId}/`}
                                                                            className="courseVideo__button-link"
                                                                            onClick={addPastLesson}>Следующий урок</a>
+                    </div> : ''
+                }
+                {
+                    isFinalLesson ? <div className="courseVideo__button">
+                        <button
+                            className="courseVideo__button-link"
+                            onClick={addPastLesson}>Закончить курс
+                        </button>
                     </div> : ''
                 }
             </div>
