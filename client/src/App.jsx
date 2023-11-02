@@ -19,7 +19,7 @@ function App() {
   return (
     <>
       <Nav />
-      {/* <AboutCourse /> */}
+      <AboutCourse />
       {/* <Group /> */}
       {/* <CourseVideo /> */}
       {/* <CourseProgress /> */}
@@ -28,7 +28,7 @@ function App() {
       {/* <Auth /> */}
       {/* <Header /> */}
       {/* <Home /> */}
-        <Profile />
+        {/* <Profile /> */}
       {/* <Courses /> */}
       <Footer />
     </>
