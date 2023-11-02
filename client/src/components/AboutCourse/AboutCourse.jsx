@@ -29,9 +29,9 @@ const AboutCourse = () => {
         you_get_title_3: ''
     });
 
-    // useEffect(() => {
-    //     getCourseInfo()
-    // }, [])
+    useEffect(() => {
+        getCourseInfo()
+    }, [])
 
 
     function getCourseId() {
