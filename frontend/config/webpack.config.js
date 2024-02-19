@@ -248,6 +248,10 @@ module.exports = function (webpackEnv) {
       pased_lesson: [
           paths.appSrc + '/pasedLesson'
       ].filter(Boolean),
+
+      tests: [
+          paths.appSrc + '/tests'
+      ].filter(Boolean),
     },
     output: {
       // The build folder.
@@ -836,6 +840,33 @@ module.exports = function (webpackEnv) {
             chunks: ['pased_lesson'],
             template: paths.pasedLesson,
             filename: 'pased_lesson.html'
+          },
+          isEnvProduction
+            ? {
+                minify: {
+                  removeComments: true,
+                  collapseWhitespace: true,
+                  removeRedundantAttributes: true,
+                  useShortDoctype: true,
+                  removeEmptyAttributes: true,
+                  removeStyleLinkTypeAttributes: true,
+                  keepClosingSlash: true,
+                  minifyJS: true,
+                  minifyCSS: true,
+                  minifyURLs: true,
+                },
+              }
+            : undefined
+        )
+      ),
+        new HtmlWebpackPlugin(
+        Object.assign(
+          {},
+          {
+            inject: true,
+            chunks: ['tests'],
+            template: paths.tests,
+            filename: 'tests.html'
           },
           isEnvProduction
             ? {

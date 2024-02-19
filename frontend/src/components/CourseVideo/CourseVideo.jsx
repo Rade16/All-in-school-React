@@ -78,7 +78,7 @@ const CourseVideo = () => {
         })
 
         axios({
-            method: 'post',
+            method: 'put',
             url: '/get-test-result/',
             data: sendingTest,
             xsrfCookieName: 'csrftoken',
@@ -139,7 +139,7 @@ const CourseVideo = () => {
                     test.passed ?
                         <div className="test__box">
                             <div className="test__box__title">
-                                <h1 className="courseVideo__title">Тест. {test.name} с оценко {test.mark}</h1>
+                                <h1 className="courseVideo__title">Тест. {test.name} с оценкой {test.mark}</h1>
                             </div>
                         </div> : ''
                 }

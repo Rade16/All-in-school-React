@@ -40,6 +40,9 @@ const Nav2 = () => {
                                 <a href="/group/">Моя группа</a>
                             </li>
                             <li>
+                                <a href="/tests/">Тесты</a>
+                            </li>
+                            <li>
                                 <a href="/settings/">Настройки</a>
                             </li>
                             <li>

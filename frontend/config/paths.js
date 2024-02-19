@@ -66,6 +66,7 @@ module.exports = {
   userProfile: resolveApp('public/user_profile.html'),
   lesson: resolveApp('public/lesson.html'),
   pasedLesson: resolveApp('public/pased_lesson.html'),
+  tests: resolveApp('public/tests.html'),
   appPackageJson: resolveApp('package.json'),
   appSrc: resolveApp('src'),
   appTsConfig: resolveApp('tsconfig.json'),
