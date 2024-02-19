@@ -1,16 +1,18 @@
-main{
+main {
   background: #131313;
   color: white;
 }
 
-.main__container{
+.main__container {
   width: 1240px;
   margin: 0 auto;
 }
-.titleOfPage{
+
+.titleOfPage {
   font-size: 42px;
   padding: 10px;
 }
+
 .benefits {
   overflow: hidden;
 
@@ -49,13 +51,14 @@ main{
 $transition-time: 1.35s;
 
 
-    .row {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      align-items: center;
+.row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
 
-      column-gap: 20px;
-    }
+  column-gap: 20px;
+}
+
 .card {
   position: relative;
   height: 300px;
@@ -67,18 +70,23 @@ $transition-time: 1.35s;
   &:hover {
     .cover {
       transform: rotateX(0deg) rotateY(-180deg);
+
       &:before {
         transform: translateZ(30px);
       }
+
       &:after {
         background-color: black;
       }
+
       h1 {
         transform: translateZ(100px);
       }
+
       .price {
         transform: translateZ(60px);
       }
+
       a {
         transform: translateZ(-60px) rotatey(-180deg);
       }
@@ -94,6 +102,7 @@ $transition-time: 1.35s;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+
     &:before {
       content: '';
       position: absolute;
@@ -108,6 +117,7 @@ $transition-time: 1.35s;
       transform-style: preserve-3d;
       transform: translateZ(0px);
     }
+
     &:after {
       content: '';
       position: absolute;
@@ -119,18 +129,23 @@ $transition-time: 1.35s;
       transition: ease all 1.3s;
       background: rgba(0, 0, 0, 0.4);
     }
+
     &.item-a {
       background-image: url('./../../../src/img//home//barber/barber1.png');
     }
+
     &.item-b {
       background-image: url('../../img/home/barber/barber2.png');
     }
+
     &.item-c {
       background-image: url('../../img/home/barber/barber3.png');
     }
+
     &.item-d {
       background-image: url('../../img/home/barber/barber4.png');
     }
+
     h1 {
       font-weight: 600;
       position: absolute;
@@ -143,6 +158,7 @@ $transition-time: 1.35s;
       font-size: 3em;
       transform: translateZ(0px);
     }
+
     .price {
       font-weight: 200;
       position: absolute;
@@ -156,6 +172,7 @@ $transition-time: 1.35s;
       transform: translateZ(0px);
     }
   }
+
   .card-back {
     position: absolute;
     height: 100%;
@@ -180,6 +197,7 @@ $transition-time: 1.35s;
       padding: 14px 32px;
       outline: none;
       text-decoration: none;
+
       &:hover {
         background-color: white;
         color: #0b0f08;
@@ -189,12 +207,14 @@ $transition-time: 1.35s;
 }
 
 // ----about-----
-.aboutUs{
+.aboutUs {
   margin-top: 50px;
 }
-.aboutUs__container{
-position: relative;
+
+.aboutUs__container {
+  position: relative;
 }
+
 .grid-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -208,7 +228,7 @@ position: relative;
     "img1 img1 img3 img3";
 }
 
-.aboutUs__text-block{
+.aboutUs__text-block {
   position: absolute;
   width: 340px;
   height: 310px;
@@ -219,65 +239,70 @@ position: relative;
   justify-content: center;
 }
 
-.text-block_1{
+.text-block_1 {
   top: 60px;
   left: 280px;
 }
 
-.text-block_2{
+.text-block_2 {
   top: 300px;
   left: 880px;
 }
 
-.text-block_3{
-  top: 850px;
+.text-block_3 {
+  top: 790px;
   left: 280px;
 }
-.aboutUs__text-block-title{
+
+.aboutUs__text-block-title {
   display: block;
 }
-.aboutUs__text{
+
+.aboutUs__text {
   display: block;
 }
-  .img1 {
 
-    grid-area: img1;
-  }
+.img1 {
+  height: 500px;
+  object-fit: cover;
+  grid-area: img1;
+}
 
-  .img2 {
-    grid-area: img2;
-  }
+.img2 {
+  grid-area: img2;
+}
 
-  .img3 {
-    grid-area: img3;
-  }
+.img3 {
+  grid-area: img3;
+  height: 500px;
+  margin-top: 30px;
+  object-fit: cover;
+}
 
 // WhatsWeCan
 
-.WhatsWeCan
-{
+.WhatsWeCan {
   margin-top: 50px;
   height: 600px;
 }
 
-.WhatsWeCan__line{
+.WhatsWeCan__line {
   margin-top: 70px;
   display: flex;
   gap: 5px;
 }
 
-.WhatsWeCan__block
-{
+.WhatsWeCan__block {
   width: 310px;
   height: 310px;
   background: #1c1c1c;
   border-radius: 50%;
   display: flex;
-  justify-content: center ;
+  justify-content: center;
   align-items: center;
 }
-.WhatsWeCan__innerBlock
-{
+
+.WhatsWeCan__innerBlock {
   background: #000000;
   width: 275px;
   height: 275px;
@@ -288,8 +313,7 @@ position: relative;
   align-items: center;
 }
 
-.WhatsWeCan__block-text
-{
+.WhatsWeCan__block-text {
   text-align: center;
   font-size: 22px;
   font-weight: 400;

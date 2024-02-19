@@ -5,8 +5,8 @@ import time from './../../../src/img/home/icons/time.svg';
 import sertificate from './../../../src/img/home/icons/certificate.svg';
 
 import img1 from './../../../src/img/home/aboutUs/image 9.png';
-import img2 from './../../../src/img/home/aboutUs/img 7.png';
-import img3 from './../../../src/img/home/aboutUs/img 8.png';
+import img2 from './../../../src/img/home/aboutUs/img 2.jpg';
+import img3 from './../../../src/img/home/aboutUs/img 3.jpg';
 import {useEffect, useState} from "react";
 import axios from "axios";
 
@@ -87,7 +87,7 @@ const Home = () => {
                         <div className="aboutUs__text-block text-block_1">
                             <h1 className="aboutUs__text-block-title">All in school</h1>
                             <p className="aboutUs__text">
-                                Онлайн площадка для получения знаний и навыков в сфере услуг красоты.
+                                Онлайн площадка для получения знаний и навыков в сфере услуг строительства.
                             </p>
                         </div>
                         <div className="aboutUs__text-block text-block_2">
