@@ -6,14 +6,14 @@ from .models import Profile
 
 
 class AdminProfile(admin.ModelAdmin):
-    list_display = ['user', 'first_name', 'second_name', 'last_name', 'telephone', 'gender']
+    list_display = ['user', 'first_name', 'second_name', 'last_name', 'telephone', 'gender', 'type']
     fieldsets = [
         ('Отношение к пользователю', {'fields': ['user']}),
-        ('Основная информация', {'fields': ['first_name', 'second_name', 'last_name', 'gender']}),
-        ('Второстепенная информация', {'fields': ['telephone', 'telegram', 'photo']})
+        ('Основная информация', {'fields': ['first_name', 'second_name', 'last_name', 'type']}),
+        ('Второстепенная информация', {'fields': ['gender', 'telephone', 'telegram', 'photo']})
     ]
-    search_fields = ['user', 'telephone']
-    list_filter = [('gender', admin.ChoicesFieldListFilter)]
+    search_fields = ['user', 'telephone', 'second_name']
+    list_filter = [('gender', admin.ChoicesFieldListFilter), ('type', admin.ChoicesFieldListFilter)]
 
     def delete_queryset(self, request, queryset):
         pass

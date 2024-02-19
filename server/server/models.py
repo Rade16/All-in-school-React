@@ -2,7 +2,7 @@ from django.db import models
 
 class SiteInfo(models.Model):
     name = 'Информация по сайту'
-    url_to_telegram = models.TextField()
+    url_to_telegram = models.TextField(verbose_name='Ссылка на группу в ТГ')
 
     class Meta:
         db_table = 'SiteInfo'
