@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import ensure_csrf_cookie
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.http import HttpResponse
 from rest_framework.decorators import api_view
@@ -10,16 +10,21 @@ from .models import Lesson, PastLesson
 from .serializers import LessonSerializer
 from auth_sys.models import Profile
 from courses.models import Course
-from tests.models import Test
+from tests.models import Test, PassedTest
 
 
 @login_required(login_url='home')
 def lesson(request, id):
+    modyfied = False
     try:
         while not PastLesson.objects.filter(lesson_id=id - 1) and Lesson.objects.get(pk=id).number > 1:
             id -= 1
+            modyfied = True
     except Lesson.DoesNotExist:
         return HttpResponse(status=404)
+
+    if modyfied:
+        return redirect('lessons:lesson', id=id)
     return render(request, 'lesson.html', context={'lessonId': id})
 
 
@@ -35,7 +40,8 @@ def getLessonInfo(request):
         lesson = Lesson.objects.get(pk=request.data['lessonId'])
         serializer = LessonSerializer(lesson)
 
-        data = {'next_lesson_id': '', 'is_final_lesson': False, 'test': {'questions': []}}
+        data = {'next_lesson_id': '', 'is_final_lesson': False,
+                'test': {'passed': False, 'mark': None, 'status': False, 'questions': []}}
         data.update(serializer.data)
 
         course = lesson.course
@@ -46,7 +52,7 @@ def getLessonInfo(request):
             test = Test.objects.filter(lesson__id=lesson.id)
             if test:
                 test = test.first()
-                data['test'].update({'test_id': test.id, 'name': test.name})
+                data['test'].update({'test_id': test.id, 'name': test.name, 'status': True})
 
                 for question in test.question_set.all():
                     data['test']['questions'].append(
@@ -56,14 +62,18 @@ def getLessonInfo(request):
                         data['test']['questions'][-1]['answers'].append(
                             {'answer_id': answer.id, 'answer_text': answer.text})
 
-                user = lesson.test.passedTestUsers.all().get(username=request.user.username)
+                passedTest = PassedTest.objects.get(test__id=test.id, user__id=request.user.id)
+                if passedTest:
+                    data['test']['passed'] = True
+                    data['test']['status'] = False
+                    data['test']['mark'] = passedTest.mark
 
             if thisLessonIndex + 1 < len(courseLessons):
                 nextLessonId = courseLessons[thisLessonIndex + 1].id
                 data['next_lesson_id'] = nextLessonId
             else:
                 data['is_final_lesson'] = True
-        except User.DoesNotExist:
+        except PassedTest.DoesNotExist:
             pass
 
         return Response(data, status=status.HTTP_200_OK)
@@ -77,7 +87,8 @@ def addPastLesson(request):
         user = User.objects.get(pk=request.user.id)
         lesson = Lesson.objects.get(pk=request.data['lessonId'])
 
-        PastLesson.objects.create(user=user, lesson=lesson, course=lesson.course)
+        if not PastLesson.objects.filter(user=user, lesson=lesson, course=lesson.course):
+            PastLesson.objects.create(user=user, lesson=lesson, course=lesson.course)
         return Response(status=status.HTTP_200_OK)
     return Response(status=status.HTTP_403_FORBIDDEN)
 

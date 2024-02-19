@@ -26,6 +26,7 @@ urlpatterns = [
     path('', include('courses.urls')),
     path('', include('group.urls')),
     path('', include('lessons.urls')),
+    path('', include('tests.urls')),
     path('', views.home, name='home'),
     path('get-site-info/', views.getSiteInfo, name='get-site-info'),
     path('admin/', admin.site.urls),

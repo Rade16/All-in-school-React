@@ -44,7 +44,7 @@ const CourseVideo = () => {
         })
     }, []);
 
-    function addPastLesson() {
+    function addPastLesson(nextLessonId) {
         axios({
             method: 'post',
             url: '/add-past-lesson/',
@@ -57,7 +57,35 @@ const CourseVideo = () => {
         }).then((response) => {
             if (isFinalLesson) {
                 window.location.href = '/pased-lesson/'
+            } else {
+                window.location.href = `/lesson/${nextLessonId}/`
             }
+        })
+    }
+
+    function SendTest() {
+        const sendingTest = {
+            test_id: test.test_id,
+            questions: {}
+        }
+
+        test.questions.forEach((question) => {
+            question.answers.forEach((answer) => {
+                if (document.getElementById(`answer-${answer.answer_id}`).checked) {
+                    sendingTest.questions[question.question_id] = answer.answer_id
+                }
+            })
+        })
+
+        axios({
+            method: 'post',
+            url: '/get-test-result/',
+            data: sendingTest,
+            xsrfCookieName: 'csrftoken',
+            xsrfHeaderName: 'X-CSRFTOKEN',
+            withCredentials: true
+        }).then((response) => {
+            window.location.reload()
         })
     }
 
@@ -77,10 +105,10 @@ const CourseVideo = () => {
                         {text}
                     </p>
                 </div>
-                {test.questions ?
+                {test.status ?
                     <div className="test__box">
                         <div className="test__box__title">
-                            <h1 className="courseVideo__title">{test.name}</h1>
+                            <h1 className="courseVideo__title">Тест. {test.name}</h1>
                         </div>
                         <ul className='questions__list'>
                             {test.questions.map((question) => {
@@ -90,9 +118,10 @@ const CourseVideo = () => {
                                         <ul className='answers'>
                                             {question.answers.map((answer) => {
                                                 return (<li>
-                                                    <input type='radio' name={`answer-${question.question_id}`}
-                                                           id={answer.answer_id}/>
-                                                    <label htmlFor={answer.answer_id}>{answer.answer_text}</label>
+                                                    <input type='radio' name={`question-${question.question_id}`}
+                                                           id={`answer-${answer.answer_id}`}/>
+                                                    <label
+                                                        htmlFor={`answer-${answer.answer_id}`}>{answer.answer_text}</label>
                                                 </li>)
                                             })}
                                         </ul>
@@ -101,15 +130,24 @@ const CourseVideo = () => {
                             })}
                         </ul>
                         <div className="courseVideo__button">
-                            <button className="courseVideo__button-link">
+                            <button className="courseVideo__button-link" onClick={SendTest}>
                                 Проверить тест
                             </button>
                         </div>
                     </div> : ''}
                 {
-                    nextLessonId ? <div className="courseVideo__button"><a href={`/lesson/${nextLessonId}/`}
-                                                                           className="courseVideo__button-link"
-                                                                           onClick={addPastLesson}>Следующий урок</a>
+                    test.passed ?
+                        <div className="test__box">
+                            <div className="test__box__title">
+                                <h1 className="courseVideo__title">Тест. {test.name} с оценко {test.mark}</h1>
+                            </div>
+                        </div> : ''
+                }
+                {
+                    nextLessonId ? <div className="courseVideo__button"><a className="courseVideo__button-link"
+                                                                           onClick={() => {
+                                                                               addPastLesson(nextLessonId)
+                                                                           }}>Следующий урок</a>
                     </div> : ''
                 }
                 {

@@ -20,8 +20,8 @@
     "user_group.js": "/static/js/user_group.5fb79be1.js",
     "user_profile.css": "/static/css/user_profile.482f34bb.css",
     "user_profile.js": "/static/js/user_profile.189c0da1.js",
-    "lesson.css": "/static/css/lesson.0aacddd5.css",
-    "lesson.js": "/static/js/lesson.40aefdaf.js",
+    "lesson.css": "/static/css/lesson.58bb31ca.css",
+    "lesson.js": "/static/js/lesson.c6801149.js",
     "pased_lesson.css": "/static/css/pased_lesson.a93644df.css",
     "pased_lesson.js": "/static/js/pased_lesson.04663d72.js",
     "static/media/image 23.png": "/static/media/image 23.7903d76a12dc83cfb453.png",
@@ -78,8 +78,8 @@
     "user_group.5fb79be1.js.map": "/static/js/user_group.5fb79be1.js.map",
     "user_profile.482f34bb.css.map": "/static/css/user_profile.482f34bb.css.map",
     "user_profile.189c0da1.js.map": "/static/js/user_profile.189c0da1.js.map",
-    "lesson.0aacddd5.css.map": "/static/css/lesson.0aacddd5.css.map",
-    "lesson.40aefdaf.js.map": "/static/js/lesson.40aefdaf.js.map",
+    "lesson.58bb31ca.css.map": "/static/css/lesson.58bb31ca.css.map",
+    "lesson.c6801149.js.map": "/static/js/lesson.c6801149.js.map",
     "pased_lesson.a93644df.css.map": "/static/css/pased_lesson.a93644df.css.map",
     "pased_lesson.04663d72.js.map": "/static/js/pased_lesson.04663d72.js.map"
   },
@@ -104,8 +104,8 @@
     "static/js/user_group.5fb79be1.js",
     "static/css/user_profile.482f34bb.css",
     "static/js/user_profile.189c0da1.js",
-    "static/css/lesson.0aacddd5.css",
-    "static/js/lesson.40aefdaf.js",
+    "static/css/lesson.58bb31ca.css",
+    "static/js/lesson.c6801149.js",
     "static/css/pased_lesson.a93644df.css",
     "static/js/pased_lesson.04663d72.js"
   ]
