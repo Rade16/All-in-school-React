@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
-import os
+import os, configparser
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -80,14 +80,18 @@ WSGI_APPLICATION = 'server.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+dbConfig = configparser.ConfigParser()
+dbConfig.read(SERVER_DIR / 'db_config.ini')
+dbConfig = dbConfig['DB_CONF']
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'all_in_school',
-        'USER': 'postgres',
-        'PASSWORD': 'dg7897oleg1',
-        'HOST': 'localhost',
-        'PORT': ''
+        'NAME': dbConfig['NAME'],
+        'USER': dbConfig['USER'],
+        'PASSWORD': dbConfig['PASSWORD'],
+        'HOST': dbConfig['HOST'],
+        'PORT': dbConfig['PORT']
     }
 }
 
