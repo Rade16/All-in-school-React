@@ -40,7 +40,7 @@ const Tests = () => {
                         return (
                             <li className='test__box'>
                                 <h3>{element.name}</h3>
-                                <a href={`${element.id}`}>Посмотреть</a>
+                                <a href={`/tests-results/${element.id}/`}>Посмотреть</a>
                             </li>
                         )
                     })}

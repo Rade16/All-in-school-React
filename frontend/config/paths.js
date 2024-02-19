@@ -67,6 +67,7 @@ module.exports = {
   lesson: resolveApp('public/lesson.html'),
   pasedLesson: resolveApp('public/pased_lesson.html'),
   tests: resolveApp('public/tests.html'),
+  testsResults: resolveApp('public/testsResults.html'),
   appPackageJson: resolveApp('package.json'),
   appSrc: resolveApp('src'),
   appTsConfig: resolveApp('tsconfig.json'),

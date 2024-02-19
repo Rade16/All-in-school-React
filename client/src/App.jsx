@@ -15,7 +15,7 @@ import AboutCourse from "./components/AboutCourse/AboutCourse";
 import Group from "./pages/Group/Group";
 import CourseProgress from "./components/CourseProgress/CourseProgress";
 import CourseVideo from "./components/CourseVideo/CourseVideo";
-import Test from './pages/Tests/Tests.jsx'
+import Test from './pages/Tests/TestsResults.jsx'
 function App() {
   return (
     <>

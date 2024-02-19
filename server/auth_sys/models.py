@@ -38,5 +38,8 @@ class Profile(models.Model):
         verbose_name = 'Профиль'
         verbose_name_plural = 'Профили'
 
+    def get_full_name(self):
+        return f'{self.second_name} {self.first_name} {self.last_name}'
+
     def __str__(self):
         return self.user.username

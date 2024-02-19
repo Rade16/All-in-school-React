@@ -25,7 +25,9 @@
     "pased_lesson.css": "/static/css/pased_lesson.a93644df.css",
     "pased_lesson.js": "/static/js/pased_lesson.77753b28.js",
     "tests.css": "/static/css/tests.338af73f.css",
-    "tests.js": "/static/js/tests.ce7698b8.js",
+    "tests.js": "/static/js/tests.7675a573.js",
+    "testsResults.css": "/static/css/testsResults.8ec88173.css",
+    "testsResults.js": "/static/js/testsResults.08338e0d.js",
     "static/media/image 23.png": "/static/media/image 23.7903d76a12dc83cfb453.png",
     "static/media/img 8.png": "/static/media/img 8.a0d9bcfa4b3a47c7a2e7.png",
     "static/media/barber2.png": "/static/media/barber2.4333027db60f02ab933f.png",
@@ -54,6 +56,7 @@
     "course.html": "/course.html",
     "catalog.html": "/catalog.html",
     "menu.html": "/menu.html",
+    "testsResults.html": "/testsResults.html",
     "lesson.html": "/lesson.html",
     "pased_lesson.html": "/pased_lesson.html",
     "user_courses.html": "/user_courses.html",
@@ -86,7 +89,9 @@
     "pased_lesson.a93644df.css.map": "/static/css/pased_lesson.a93644df.css.map",
     "pased_lesson.77753b28.js.map": "/static/js/pased_lesson.77753b28.js.map",
     "tests.338af73f.css.map": "/static/css/tests.338af73f.css.map",
-    "tests.ce7698b8.js.map": "/static/js/tests.ce7698b8.js.map"
+    "tests.7675a573.js.map": "/static/js/tests.7675a573.js.map",
+    "testsResults.8ec88173.css.map": "/static/css/testsResults.8ec88173.css.map",
+    "testsResults.08338e0d.js.map": "/static/js/testsResults.08338e0d.js.map"
   },
   "entrypoints": [
     "static/css/user_menu.19beaf02.css",
@@ -114,6 +119,8 @@
     "static/css/pased_lesson.a93644df.css",
     "static/js/pased_lesson.77753b28.js",
     "static/css/tests.338af73f.css",
-    "static/js/tests.ce7698b8.js"
+    "static/js/tests.7675a573.js",
+    "static/css/testsResults.8ec88173.css",
+    "static/js/testsResults.08338e0d.js"
   ]
 }

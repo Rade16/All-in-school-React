@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from rest_framework import status
 from .models import Test, Question, Answer, PassedTest
 from .serializer import TestSerializer
+from django.contrib.auth.models import User
 from auth_sys.models import Profile
 
 
@@ -13,6 +14,12 @@ from auth_sys.models import Profile
 def tests(request):
     if request.user.profile.type == Profile.teacher:
         return render(request, 'tests.html')
+    return HttpResponse(status=403)
+
+@login_required(login_url='auth_sys:sign-in')
+def testResult(request, id):
+    if request.user.profile.type == Profile.teacher:
+        return render(request, 'testsResults.html', {'dataId': id})
     return HttpResponse(status=403)
 
 
@@ -50,3 +57,16 @@ class TestsView(APIView):
         data = TestSerializer(tests, many=True)
 
         return Response(data.data, status=status.HTTP_200_OK)
+
+
+class TestResult(APIView):
+    def get(self, request, id):
+        tests = PassedTest.objects.filter(test__id=id)
+        data = []
+
+        for test in tests:
+            user = User.objects.get(pk=test.user.id)
+            userFullName = user.profile.get_full_name()
+
+            data.append({'mark': test.mark, 'username': userFullName})
+        return Response(data, status=status.HTTP_200_OK)
