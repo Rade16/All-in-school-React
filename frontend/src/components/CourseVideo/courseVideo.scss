@@ -75,3 +75,31 @@
 .courseVideo__button-link{
   color: #000;
 }
+
+.test__box{
+  margin-top: 55px;
+}
+
+.questions__list{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.answers{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.answers li{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.question p,
+.answers li label{
+  max-width: 1000px;
+}

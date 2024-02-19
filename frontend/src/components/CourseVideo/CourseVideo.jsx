@@ -14,6 +14,8 @@ const CourseVideo = () => {
     const [nextLessonId, setNextLessonId] = useState('')
     const [isFinalLesson, setIsFinalLesson] = useState(false)
 
+    const [test, setTest] = useState({})
+
     function getLessonId() {
         return document.getElementById('root').getAttribute('data')
     }
@@ -30,7 +32,6 @@ const CourseVideo = () => {
             withCredentials: true
         }).then((response) => {
             const data = response.data
-            console.log(data)
             setName(data.name)
             setNumber(data.number)
             setVideo(data.video)
@@ -38,6 +39,8 @@ const CourseVideo = () => {
             setText(data.text)
             setNextLessonId(data.next_lesson_id)
             setIsFinalLesson(data.is_final_lesson)
+            setTest(data.test)
+            console.log(data.test)
         })
     }, []);
 
@@ -74,6 +77,35 @@ const CourseVideo = () => {
                         {text}
                     </p>
                 </div>
+                {test.questions ?
+                    <div className="test__box">
+                        <div className="test__box__title">
+                            <h1 className="courseVideo__title">{test.name}</h1>
+                        </div>
+                        <ul className='questions__list'>
+                            {test.questions.map((question) => {
+                                return (
+                                    <li className='question'>
+                                        <p>{question.question_text}?</p>
+                                        <ul className='answers'>
+                                            {question.answers.map((answer) => {
+                                                return (<li>
+                                                    <input type='radio' name={`answer-${question.question_id}`}
+                                                           id={answer.answer_id}/>
+                                                    <label htmlFor={answer.answer_id}>{answer.answer_text}</label>
+                                                </li>)
+                                            })}
+                                        </ul>
+                                    </li>
+                                )
+                            })}
+                        </ul>
+                        <div className="courseVideo__button">
+                            <button className="courseVideo__button-link">
+                                Проверить тест
+                            </button>
+                        </div>
+                    </div> : ''}
                 {
                     nextLessonId ? <div className="courseVideo__button"><a href={`/lesson/${nextLessonId}/`}
                                                                            className="courseVideo__button-link"
