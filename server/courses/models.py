@@ -14,14 +14,16 @@ class Course(models.Model):
     about_text_2 = models.TextField(null=True, blank=True, verbose_name='Второе описание курса')
     about_image_2 = models.ImageField(upload_to='courses_images', verbose_name='Картинка в описании (Обязательно)')
 
-    you_get_title_1 = models.CharField(max_length=150)
-    you_get_text_1 = models.TextField()
+    you_get_title_1 = models.CharField(max_length=150, verbose_name='Кратко, что получает пользователь (Обязательно)')
+    you_get_text_1 = models.TextField(verbose_name='Описание того, что он получает (Обязательно)')
 
-    you_get_title_2 = models.CharField(max_length=150, null=True, blank=True)
-    you_get_text_2 = models.TextField(null=True, blank=True)
+    you_get_title_2 = models.CharField(max_length=150, null=True, blank=True,
+                                       verbose_name='Кратко, что получает пользователь')
+    you_get_text_2 = models.TextField(null=True, blank=True, verbose_name='Описание того, что он получает')
 
-    you_get_title_3 = models.CharField(max_length=150, null=True, blank=True)
-    you_get_text_3 = models.TextField(null=True, blank=True)
+    you_get_title_3 = models.CharField(max_length=150, null=True, blank=True,
+                                       verbose_name='Кратко, что получает пользователь')
+    you_get_text_3 = models.TextField(null=True, blank=True, verbose_name='Описание того, что он получает')
 
     upload_date = models.DateField(auto_now=True)
     about_image_3 = models.ImageField(upload_to='courses_images', verbose_name='Картинка в описании (Обязательно)')

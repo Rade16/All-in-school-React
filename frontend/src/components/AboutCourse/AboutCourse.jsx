@@ -122,7 +122,7 @@ const AboutCourse = () => {
                         <h1 className='aboutCourse__title'>Что принести с собой на практику?</h1>
                         <div className="aboutCourse__whatPutUp-block">
                             <p className='aboutCourse__whatPutUp-text'>Всё необходимое для обучения предоставляет школа:
-                                брендированный шоппер со стартовым набором продукции ведущих лучших брендов. Вам
+                                брендированная каска c набором продукции ведущих лучших брендов. Вам
                                 остаётся только приносить с собой хорошее настроение и готовность учиться новому.</p>
                             <img src={courseInfo.about_image_3} alt="" className='aboutCourse__whatPutUp-img'/>
                         </div>
