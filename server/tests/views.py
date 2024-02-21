@@ -30,11 +30,7 @@ class TestsView(APIView):
         points = 0
 
         for questionId in data.get('questions'):
-            questionAnswers = Question.objects.get(pk=questionId).answer_set.all()
-
-            for answer in questionAnswers:
-                if answer.is_correct:
-                    correctAnswerId = answer.id
+            correctAnswerId = Question.objects.get(pk=questionId).answer_set.all().get(is_correct=True).id
 
             if data.get('questions').get(questionId) == correctAnswerId:
                 points += 1
